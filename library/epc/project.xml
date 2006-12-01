@@ -1,0 +1,57 @@
+
+<project>
+	<extend>${basedir}/../../project.xml</extend>
+        <!--pomVersion is in parent -->
+        <!-- groupId is in parent -->
+	<id>singularity-epc</id>
+	<name>Singularity EPC</name>
+	<description>Singularity EPC</description>
+	<shortDescription>Singularity EPC</shortDescription>
+	<package>com.refactored_networks.epc.*</package>
+	<dependencies>
+	
+	</dependencies>
+	<developers>
+		<developer>
+			<id>mmealling</id>
+			<name>Michael Mealling</name>
+			<email>info@refactored-networks.com</email>
+			<url>http://www.refactored-networks.com</url>
+			<roles>
+				<role>Lead Developer</role>
+			</roles>
+			<timezone>-5</timezone>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Tom Rose</name>
+			<email>tom.rose@i-konect.com</email>
+			<url>http://www.i-konect.com</url>
+			<roles>
+				<role>Lead Developer</role>
+				<role>Lead Architect</role>
+			</roles>
+			<timezone>-5</timezone>
+            </contributor>
+	</contributors>
+
+	<build>
+		<defaultGoal>singularity:dist</defaultGoal>
+		<sourceDirectory>src</sourceDirectory>
+		<unitTestSourceDirectory>test</unitTestSourceDirectory>
+		<unitTest>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</unitTest>
+	</build>
+	<reports>
+		<report>maven-checkstyle-plugin</report>
+		<report>maven-javadoc-plugin</report>
+		<report>maven-pmd-plugin</report>
+		<report>maven-jxr-plugin</report>
+		<report>maven-jdepend-plugin</report>
+		<report>maven-findbugs-plugin</report>
+	</reports>
+</project>

@@ -1,0 +1,19 @@
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dm="http://singularity.firstopen.org/devicemgr"
+    targetNamespace="http://singularity.firstopen.org/devicemgr"
+    elementFormDefault="qualified">
+    <xs:element name="dm-config">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="service" type="dm:service"  minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+     </xs:element>
+     <xs:complexType name="service">
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="config-file" type="xs:string"/>
+            </xs:sequence>
+      </xs:complexType>
+</xs:schema>

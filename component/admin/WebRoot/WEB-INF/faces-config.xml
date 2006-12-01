@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_0.dtd" [
+<!ENTITY managed-beans_gen          SYSTEM "managed-beans_gen.xml">
+<!ENTITY sample-navigation-rules    SYSTEM "sample-navigation-rules.xml">
+ <!ENTITY converters_gen    SYSTEM "converters_gen.xml">
+]>
+
+<faces-config>
+    <application>
+
+        <view-handler>org.apache.myfaces.application.jsp.JspTilesViewHandlerImpl</view-handler>
+        <locale-config>
+            <default-locale>en</default-locale>
+            <supported-locale>en_US</supported-locale>
+            <supported-locale>en_GB</supported-locale>
+            <supported-locale>en_NZ</supported-locale>
+        </locale-config>
+    </application>
+
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-action>j_security_check</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/jsp/body/carterNote.jsf</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>nav_welcome</from-action>
+            <from-outcome>ok</from-outcome>
+            <to-view-id>/jsp/body/welcome.jsp</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
+
+    <managed-bean>
+        <managed-bean-name>carterNoteBean</managed-bean-name>
+        <managed-bean-class>org.firstopen.custom.view.CarterNoteBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>authenticationBean</managed-bean-name>
+        <managed-bean-class>org.firstopen.singularity.admin.view.AuthenticationBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>deviceProfileBean</managed-bean-name>
+        <managed-bean-class>org.firstopen.singularity.admin.view.DeviceProfileBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>ecSpecBean</managed-bean-name>
+        <managed-bean-class>org.firstopen.singularity.admin.view.ECSpecBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>sessionBean</managed-bean-name>
+        <managed-bean-class>org.firstopen.singularity.admin.view.SessionBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>eventArchiveBean</managed-bean-name>
+        <managed-bean-class>org.firstopen.custom.view.EventArchiveBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>tagBean</managed-bean-name>
+        <managed-bean-class>org.firstopen.singularity.admin.view.TagBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>logicalDeviceBean</managed-bean-name>
+        <managed-bean-class>org.firstopen.singularity.admin.view.LogicalDeviceBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <navigation-rule>
+        <from-view-id>/jsp/body/login.jsp</from-view-id>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/jsp/body/welcome.jsp</from-view-id>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/jsp/body/carterNote1.jsp</from-view-id>
+        <navigation-case>
+            <from-action>#{carterNote.next}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/jsp/body/carterNote2.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/jsp/body/carterNote2.jsp</from-view-id>
+    </navigation-rule>
+    <lifecycle>
+        <phase-listener>org.firstopen.singularity.admin.TransactionPhaseListener</phase-listener>
+    </lifecycle>
+</faces-config>

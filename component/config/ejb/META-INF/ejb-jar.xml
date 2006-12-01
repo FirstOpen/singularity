@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+         http://java.sun.com/xml/ns/j2ee/ejb-jar_2_1.xsd"
+         version="2.1">
+    <display-name>Singularity 1.0 Config Service</display-name>
+    <enterprise-beans>
+        <session>
+            <ejb-name>ConfigService</ejb-name>
+            <home>org.firstopen.singularity.config.ConfigServiceHome</home>
+            <remote>org.firstopen.singularity.config.ConfigServiceRemote</remote>
+            <ejb-class>org.firstopen.singularity.config.ConfigServiceBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+            <security-role-ref>
+                <role-name>SingularityAdmin</role-name>
+            </security-role-ref>
+        </session>
+ 
+    </enterprise-beans>
+    <assembly-descriptor>
+        <security-role>
+            <role-name>SingularityAdmin</role-name>
+        </security-role>
+
+        <method-permission>
+            <description>Allow all admin memebers access</description>
+            <role-name>SingularityAdmin</role-name>
+            <method>
+                <ejb-name>ConfigService</ejb-name>
+                <method-name>*</method-name>
+            </method>
+        </method-permission>
+
+        <container-transaction>
+            <method>
+                <ejb-name>ConfigService</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+    </assembly-descriptor>
+</ejb-jar>

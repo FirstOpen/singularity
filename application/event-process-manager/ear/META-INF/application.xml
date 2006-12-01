@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<application xmlns="http://java.sun.com/xml/ns/j2ee"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+             http://java.sun.com/xml/ns/j2ee/application_1_4.xsd"
+             version="1.4">
+
+
+
+  <display-name>singularity-evp</display-name>
+  <description>Singularity Event Process Manager</description>
+
+ 
+  <module>
+    <ejb>singularity-ale-1.0-MAIN.jar</ejb>
+  </module>
+  <module>
+    <ejb>singularity-config-1.0-MAIN.jar</ejb>
+  </module>
+  <module>
+    <ejb>singularity-business-1.0-MAIN.jar</ejb>
+  </module>
+  <module>
+    <java>APP-INF/lib/hibernate-3.1.jar</java>
+  </module>
+  <module>
+    <java>APP-INF/lib/ehcache-1.1.jar</java>
+  </module>
+  <module>
+    <web>
+      <web-uri>singularity-admin-1.0-MAIN.war</web-uri>
+      <context-root>/admin</context-root>
+    </web>
+  </module>
+</application>

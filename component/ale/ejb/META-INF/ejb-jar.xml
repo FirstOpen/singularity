@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+         http://java.sun.com/xml/ns/j2ee/ejb-jar_2_1.xsd" version="2.1">
+    <display-name>Singularity ALE 1.0 Service</display-name>
+    <enterprise-beans>
+        <session>
+            <ejb-name>AleSLSB</ejb-name>
+            <home>org.firstopen.singularity.ale.AleSLSBHome</home>
+            <remote>org.firstopen.singularity.ale.AleSLSBRemote</remote>
+            <ejb-class>org.firstopen.singularity.ale.AleSLSB</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
+        <session>
+            <ejb-name>ECSpecTimerSLSB</ejb-name>
+            <local-home>org.firstopen.singularity.ale.ECSpecTimerSLSBHome</local-home>
+            <local>org.firstopen.singularity.ale.ECSpecTimerSLSBLocal</local>
+            <ejb-class>org.firstopen.singularity.ale.ECSpecTimerBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
+    </enterprise-beans>
+    <assembly-descriptor>
+        <container-transaction>
+            <method>
+                <ejb-name>AleSLSB</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>ECSpecTimerSLSB</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+    </assembly-descriptor>
+
+</ejb-jar>

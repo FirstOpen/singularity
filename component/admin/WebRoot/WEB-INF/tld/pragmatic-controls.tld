@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>pragmaticControlsTagLib</shortname>
+	<uri>http://www.pragmaticobjects.com</uri>
+	<info>Pragmatic Controls tag library</info>
+		
+	<tag>
+		<name>outlookBar</name>
+		<tagclass>com.pragmaticobjects.taglibs.outlookBar.OutlookTag</tagclass>
+		<bodycontent>JSP</bodycontent>
+		<info>An outlook bar tag</info>
+		<attribute>
+			<name>configXmlPath</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>sessionName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>resourceBundle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>language</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>				
+	</tag>
+	
+	<tag>
+		<name>outlookBar-head</name>
+		<tagclass>com.pragmaticobjects.taglibs.outlookBar.OutlookHeadTag</tagclass>
+		<bodycontent>JSP</bodycontent>
+		<info>An outlook bar head tag</info>
+		<attribute>
+			<name>leftPos</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>topPos</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>outbarWidth</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>outbarHeight</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>							
+	</tag>
+	
+	<tag>
+		<name>outlookBar-body</name>
+		<tagclass>com.pragmaticobjects.taglibs.outlookBar.OutlookBodyTag</tagclass>
+		<bodycontent>JSP</bodycontent>
+		<info>An outlook bar tag</info>
+		<attribute>
+			<name>configXmlPath</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>sessionName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>resourceBundle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>language</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>				
+	</tag>
+	
+	<tag>
+		<name>tree-head</name>
+		<tagclass>com.pragmaticobjects.taglibs.tree.TreeHeadTag</tagclass>
+		<bodycontent>JSP</bodycontent>
+		<info>A tree head tag</info>							
+	</tag>
+	
+	<tag>
+		<name>tree-body</name>
+		<tagclass>com.pragmaticobjects.taglibs.tree.TreeBodyTag</tagclass>
+		<bodycontent>JSP</bodycontent>
+		<info>A tree body tag</info>
+		<attribute>
+			<name>treeConfigXmlPath</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>treeSessionName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>contextMenuConfigXmlPath</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>contextMenuSessionName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>resourceBundle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>language</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>				
+	</tag>
+	
+	<tag>
+		<name>controlPanelBar-head</name>
+		<tagclass>com.pragmaticobjects.taglibs.controlPanelBar.ControlPanelHeadTag</tagclass>
+		<bodycontent>JSP</bodycontent>
+		<info>An XP Control Panel bar head tag</info>
+		<attribute>
+			<name>leftPos</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>topPos</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cpBarWidth</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cpBarHeight</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>panelWidth</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>									
+	</tag>
+	
+	<tag>
+		<name>controlPanelBar-body</name>
+		<tagclass>com.pragmaticobjects.taglibs.controlPanelBar.ControlPanelBodyTag</tagclass>
+		<bodycontent>JSP</bodycontent>
+		<info>An XP control panel bar tag</info>
+		<attribute>
+			<name>configXmlPath</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>sessionName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>activeItemId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>resourceBundle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>language</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>				
+	</tag>
+</taglib>	

@@ -1,0 +1,6 @@
+alter table EventRecord drop foreign key FK673D976BA7866DED;
+drop table if exists CartnersNote;
+drop table if exists EventRecord;
+create table CartnersNote (id varchar(128) not null, bookingReference varchar(255), countryCode varchar(255), dangerousGoods varchar(255), descriptionOfGoods varchar(255), entryNumber varchar(255), exporter varchar(255), grossWeight varchar(255), humidityControl varchar(255), importer varchar(255), internalPackageDesc varchar(255), numberUN varchar(255), numInternalPackages varchar(255), overDeminsionDetail varchar(255), packageId varchar(255), portOfDischarge varchar(255), portOfLoading varchar(255), portOfLoadingETA varchar(255), ventSettings varchar(255), vessel varchar(255), weight varchar(255), weightUnits varchar(255), shipper varchar(255), carrier varchar(255), sealNumber varchar(255), printedTagId varchar(255), primary key (id));
+create table EventRecord (id varchar(128) not null, tampered bit, count integer, firstreadtime bigint, lastreadtime bigint, readerid varchar(255), carterNote varchar(128), tagId varchar(255), printedId varchar(255), primary key (id));
+alter table EventRecord add index FK673D976BA7866DED (carterNote), add constraint FK673D976BA7866DED foreign key (carterNote) references CartnersNote (id);

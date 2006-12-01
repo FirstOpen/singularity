@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jboss PUBLIC "-//JBoss//DTD JBOSS 4.0//EN" "http://www.jboss.org/j2ee/dtd/jboss_4_0.dtd">
+
+<jboss>
+	<enterprise-beans>
+		<session>
+			<ejb-name>AleSLSB</ejb-name>
+			<jndi-name>ejb/ale/AleSLSB</jndi-name>
+		</session>
+		<session>
+			<ejb-name>ECSpecTimerSLSB</ejb-name>
+			<local-jndi-name>ejb/ale/ECSpecTimerSLSB</local-jndi-name>
+		</session>
+<!--
+		<session>
+                        <ejb-name>InventorySLSB</ejb-name>
+                        <jndi-name>ejb/inventory/InventorySLSB</jndi-name>
+                </session>
+-->
+	</enterprise-beans>
+</jboss>
