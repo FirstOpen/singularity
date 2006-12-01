@@ -1,0 +1,23 @@
+<!-- An xsdconfig file must begin with a "config" element in the 
+        http://www.bea.com/2002/09/xbean/config namespace. Also, be sure
+        to declare any namespaces used to qualify types in your schema (here,
+        the namespace corresponding to the pol prefix. -->
+<xb:config xmlns:pol="http://openuri.org/easypoLocal" 
+    xmlns:xb="http://www.bea.com/2002/09/xbean/config">
+  
+    <!-- Use the "namespace" element to map a namespace to the Java package
+        name that should be generated. -->
+    <xb:namespace uri="urn:epcglobal:ale:xsd:1">
+        <xb:package>org.firstopen.epc.ale</xb:package>
+    </xb:namespace>
+    <xb:namespace uri="urn:epc:specification:interchange:PMLCore:xml:schema:1">
+        <xb:package>org.firstopen.epc.pmlcore</xb:package>
+    </xb:namespace>
+    <xb:namespace uri="urn:epc:specification:universal:Identifier:xml:schema:1">
+        <xb:package>org.firstopen.epc.universal</xb:package>
+    </xb:namespace>
+    
+
+
+</xb:config>
+

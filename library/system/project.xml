@@ -1,0 +1,91 @@
+
+<project>
+	<extend>${basedir}/../../project.xml</extend>
+        <!--pomVersion is in parent -->
+        <!-- groupId is in parent -->
+	<id>singularity-system</id>
+	<name>Singularity system</name>
+	<description>Singularity system</description>
+	<shortDescription>Singularity system</shortDescription>
+	<package>org.firstopen.singularity.system.*</package>
+	<dependencies>
+		<dependency>
+			<groupId>singularity</groupId>
+			<artifactId>singularity-util</artifactId>
+			<version>${pom.currentVersion}</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>hibernate</groupId>
+			<artifactId>hibernate</artifactId>
+			<version>${org.hibernate.version}</version>
+			<type>jar</type>
+			<url>http://www.hibernate.org</url>
+		</dependency>
+		<dependency>
+			<id>log4j</id>
+			<version>${org.apache.jakarta.log4j.version}</version>
+			<url>http://jakarta.apache.org/log4j/</url>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<id>commons-logging</id>
+			<version>1.0.4</version>
+			<url>http://jakarta.apache.org/commons/</url>
+			<type>jar</type>
+		</dependency>
+        <dependency>
+            <groupId>xdoclet</groupId>
+            <artifactId>xdoclet-hibernate-module</artifactId>
+            <version>${xdoclet.version}-patch</version>
+            <type>jar</type>
+            <url>http://xdoclet.sourceforge.net</url>
+        </dependency>
+		<dependency>
+			<groupId>xdoclet</groupId>
+			<artifactId>xdoclet</artifactId>
+			<version>${xdoclet.version}</version>
+			<type>jar</type>
+			<url>http://xdoclet.sourceforge.net</url>
+		</dependency>
+		<dependency>
+			<groupId>xdoclet</groupId>
+			<artifactId>xdoclet-xdoclet-module</artifactId>
+			<version>${xdoclet.version}</version>
+			<type>jar</type>
+			<url>http://xdoclet.sourceforge.net</url>
+		</dependency>
+		<dependency>
+			<groupId>xjavadoc</groupId>
+			<artifactId>xjavadoc</artifactId>
+			<version>1.1-j5-v4</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<id>commons-collections</id>
+			<version>3.1</version>
+			<url>http://jakarta.apache.org/commons/</url>
+			<type>jar</type>
+		</dependency>
+	</dependencies>
+	<build>
+		<defaultGoal>singularity:dist</defaultGoal>
+		<sourceDirectory>src</sourceDirectory>
+		<unitTestSourceDirectory>test</unitTestSourceDirectory>
+		<unitTest>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</unitTest>
+	</build>
+	<reports>
+		<report>maven-checkstyle-plugin</report>
+		<report>maven-javadoc-plugin</report>
+		<report>maven-pmd-plugin</report>
+		<report>maven-jxr-plugin</report>
+		<report>maven-jdepend-plugin</report>
+		<report>maven-findbugs-plugin</report>
+		<report>maven-faq-plugin</report>
+		<report>maven-license-plugin</report>
+	</reports>
+</project>

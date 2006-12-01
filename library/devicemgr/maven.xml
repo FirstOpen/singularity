@@ -1,0 +1,102 @@
+<project xmlns:maven="jelly:maven" xmlns:util="jelly:util" xmlns:j="jelly:core" xmlns:ant="jelly:ant" xmlns:deploy="deploy" xmlns:artifact="artifact" xmlns:license="license">
+
+    <goal name="singularity:dist" prereqs="singularity:xdoclet">
+        <attainGoal name="jar:install" />
+        <attainGoal name="singularity:deploy" />
+    </goal>
+
+    <goal name="singularity:xdoclet" description="Build the Hibernate Files">
+
+        <echo>Building ${pom.Description} Hibernate Files...</echo>
+
+
+        <taskdef name="hibernatedoclet" classname="xdoclet.modules.hibernate.HibernateDocletTask">
+            <classpath>
+                <path refid="maven.dependency.classpath" />
+
+                <pathelement path="${pom.getDependencyPath('xdoclet:xdoclet-hibernate-module')}" />
+                <pathelement path="${pom.getDependencyPath('xdoclet:xdoclet')}" />
+                <pathelement path="${pom.getDependencyPath('xjavadoc:xjavadoc')}" />
+                <pathelement path="${pom.getDependencyPath('xdoclet:xdoclet-xdoclet-module')}" />
+                <pathelement path="${pom.getDependencyPath('commons-collections:commons-collections')}" />
+                <pathelement path="${pom.getDependencyPath('commons-logging:commons-logging')}" />
+                <pathelement path="${pom.getDependencyPath('log4j:log4j')}" />
+                <!--
+                -->
+            </classpath>
+        </taskdef>
+
+        <hibernatedoclet>
+            <!--
+                encoding="${maven.xdoclet.hibernatedoclet.encoding}"
+                docencoding="${maven.xdoclet.hibernatedoclet.docencoding}"
+            -->
+            <ant:setProperty name="excludedTags" value="${maven.xdoclet.hibernatedoclet.excludedTags}" />
+            <ant:setProperty name="destDir" value="${singularity.xdoclet.hibernatedoclet.destDir}" />
+            <ant:setProperty name="verbose" value="${singularity.xdoclet.hibernatedoclet.verbose}" />
+
+            <fileset dir="${maven.src.dir}">
+                <j:set var="fileset_index_include_var_name" value="singularity.xdoclet.hibernatedoclet.fileset.include" />
+                <j:set var="fileset_index_exclude_var_name" value="singularity.xdoclet.hibernatedoclet.fileset.exclude" />
+                <j:if test="${context.getVariable(fileset_index_include_var_name) != null}">
+                    <include name="${context.getVariable(fileset_index_include_var_name)}" />
+                </j:if>
+                <j:if test="${context.getVariable(fileset_index_exclude_var_name) != null}">
+                    <exclude name="${context.getVariable(fileset_index_exclude_var_name)}" />
+                </j:if>
+            </fileset>
+            <hibernate version="${singularity.xdoclet.hibernatedoclet.hibernate.Version}" />
+
+        </hibernatedoclet>
+    </goal>
+
+
+    
+    <!-- 
+        <goal name="singularity:deploy">
+        <deploy:copy-deps todir="${singularity.deploy.dir}" excludes="*.jar" />
+        <copy todir="${singularity.deploy.dir}">
+        <fileset dir="${maven.build.dir}">
+        <include name="*.jar" />
+        </fileset>
+        </copy>
+        </goal>
+    -->
+    <goal name="singularity:deploy" description="copy dependencies">
+        <ant:echo>deploy device manager</ant:echo>
+       
+        <copy todir="${singularity.deploy.dir}">
+            <fileset dir="${maven.build.dir}">
+                <include name="*.jar" />
+                <include name="*.dll" />
+                <include name="*.so" />
+            </fileset>
+        </copy>
+        <j:forEach var="lib" items="${pom.artifacts}">
+            <j:set var="dep" value="${lib.dependency}" />
+
+            <!-- Just include jars-->
+            <!-- Probably we should also include uberjars -->
+            
+            <j:if test="${dep.getProperty('lib.bundle')=='true' and dep.type=='jar'}">
+                <ant:echo>Deploying: ${dep.type} - ${dep.id}</ant:echo>
+                
+                <ant:copy todir="${singularity.deploy.dir}">
+                    <ant:fileset dir="${lib.file.parent}">
+                        <ant:include name="${lib.file.name}" />
+                    </ant:fileset>
+                </ant:copy>
+            </j:if>
+            <j:if test="${dep.getProperty('lib.bundle')=='true' and dep.type=='dll'}">
+                <ant:echo>Deploying: ${dep.type} - ${dep.id}</ant:echo>
+                
+                <ant:copy todir="${singularity.devicemgr.home}/win32/lib">
+                    <ant:fileset dir="${lib.file.parent}">
+                        <ant:include name="${lib.file.name}" />
+                    </ant:fileset>
+                </ant:copy>
+            </j:if>
+        </j:forEach>
+   </goal>
+</project>
+

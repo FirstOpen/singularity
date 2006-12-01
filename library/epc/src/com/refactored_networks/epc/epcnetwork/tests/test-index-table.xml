@@ -1,0 +1,22 @@
+<GEPC64Table date="2005-03-18T15:57:11-05:00">
+  <entry index="1" companyPrefix="185058300101"/> 
+  <entry index="2" companyPrefix="28505830010"/> 
+  <entry index="3" companyPrefix="3850583001"/> 
+  <entry index="4" companyPrefix="423456789"/>  
+  <entry index="5" companyPrefix="58410580"/> 
+  <entry index="6" companyPrefix="6037000"/> 
+  <entry index="8" companyPrefix="738004"/>
+  <entry index="1000" companyPrefix="085058300101"/> 
+  <entry index="1001" companyPrefix="08505830010"/> 
+  <entry index="1002" companyPrefix="0850583001"/> 
+  <entry index="1003" companyPrefix="023456789"/>  
+  <entry index="1004" companyPrefix="08410580"/> 
+  <entry index="1005" companyPrefix="0037000"/>
+  <entry index="1006" companyPrefix="038004"/> 
+  <entry index="16376" companyPrefix="005058300101"/> 
+  <entry index="16379" companyPrefix="00505830010"/> 
+  <entry index="16380" companyPrefix="0050583001"/> 
+  <entry index="16381" companyPrefix="003456789"/>  
+  <entry index="16382" companyPrefix="00410580"/> 
+  <entry index="16383" companyPrefix="999999999999"/> 
+</GEPC64Table>

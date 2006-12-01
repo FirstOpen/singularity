@@ -1,0 +1,87 @@
+
+<project>
+	<extend>${basedir}/../../project.xml</extend>
+        <!--pomVersion is in parent -->
+        <!-- groupId is in parent -->
+	<id>singularity-util</id>
+	<name>Singularity util</name>
+	<description>Singularity util</description>
+	<shortDescription>Singularity util</shortDescription>
+	<package>org.firstopen.singularity.util.*</package>
+	<dependencies>
+		<dependency>
+			<groupId>jboss</groupId>
+			<artifactId>jboss-common</artifactId>
+			<version>${org.jboss.version}</version>
+			<type>jar</type>
+			<url>http://www.jboss.org/</url>
+		</dependency>
+		<dependency>
+			<groupId>jboss</groupId>
+			<artifactId>jboss-j2ee</artifactId>
+			<version>${org.jboss.version}</version>
+			<type>jar</type>
+			<url>http://www.jboss.org/</url>
+		</dependency>
+		<dependency>
+			<groupId>jboss</groupId>
+			<artifactId>jboss-jsr77-client</artifactId>
+			<version>${org.jboss.version}</version>
+			<type>jar</type>
+			<url>http://www.jboss.org/</url>
+		</dependency>
+		<dependency>
+			<id>commons-logging</id>
+			<version>1.0.4</version>
+			<url>http://jakarta.apache.org/commons/</url>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<id>log4j</id>
+			<version>${org.apache.jakarta.log4j.version}</version>
+			<url>http://jakarta.apache.org/log4j/</url>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>2.0</version>
+			<url>http://jakarta.apache.org/commons/httpclient/</url>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>hibernate</groupId>
+			<artifactId>hibernate</artifactId>
+			<type>jar</type>
+			<version>${org.hibernate.version}</version>
+			<url>http://www.hibernate.org</url>
+		</dependency>
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>2.7.1</version>
+			<url>http://xml.apache.org/</url>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<defaultGoal>singularity:dist</defaultGoal>
+		<sourceDirectory>src</sourceDirectory>
+		<unitTestSourceDirectory>test</unitTestSourceDirectory>
+		<unitTest>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</unitTest>
+	</build>
+	<reports>
+		<report>maven-checkstyle-plugin</report>
+		<report>maven-javadoc-plugin</report>
+		<report>maven-pmd-plugin</report>
+		<report>maven-jxr-plugin</report>
+		<report>maven-jdepend-plugin</report>
+		<report>maven-findbugs-plugin</report>
+		<report>maven-faq-plugin</report>
+		<report>maven-license-plugin</report>
+	</reports>
+</project>

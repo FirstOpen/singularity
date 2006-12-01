@@ -1,0 +1,61 @@
+   ======================================================================
+   == NOTICE file corresponding to section 4 d of the Apache License,  ==
+   == Version 2.0, in this case for the Singularity distribution.      ==
+   == As well as attribution notices for other open licenses.          ==
+   ======================================================================
+
+Apache Licenses
+   This product includes software developed by
+   the Apache Software Foundation (http://www.apache.org).
+
+   This product also includes software developed by
+   Clinton Begin (http://www.ibatis.com).
+
+   This product includes software developed by the Spring Framework
+   Project (http://www.springframework.org).
+
+  This product includes software developed by Refactored Networks
+     (http://www.refactored-networks.com/downloads.html)
+
+   This product includes software developed by the Acegi Security
+     System for Spring Project (http://acegisecurity.sourceforge.net).
+
+Other Licenses 
+   This product includes software developed by PragmaticObjects
+     (http://pragmaticobjects.com/license.html)
+
+  This product uses software developed by JBoss
+   (http://www.jboss.org), such as JBPM, and is licenesed
+   under LGPL Version 2.1 of the LGPL.
+
+   This product includes software developed by the Werken Company.
+   (http://drools.werken.com/).
+
+   This product includes software developed by Todd Ditchendorf.
+    (http://ditchnet.org/taglibs/)
+
+-------------
+   The end-user documentation included with a redistribution, if any,
+   must include the following acknowledgement:
+
+        "This product includes software developed by FirstOpen
+          (http://singularity.firstopen.org)."
+
+   Alternately, this acknowledgement may appear in the software itself,
+   if and wherever such third-party acknowledgements normally appear.
+
+   The names Singularity, FirstOpen, or i-Konect must not be used to endorse or
+   promote derviative works of this software without prior written
+   permission. Written permission may be requested by contacting
+   i-Konect LLC. http://www.firstopen.org singularity@firstopen.org
+
+
+-----------
+
+Comments:
+
+All other software products that are not licensed under the Apache 2.0 license 
+are only used by Singularity. No derived works or source code of 
+non-Apache 2.0 licensed software is distributed. Also all other licenses are LGPL
+or similar allowing commerical products to also use them as well in thier dervived works
+of Singularity and liceense the derived work itself under a different open or commerical license.

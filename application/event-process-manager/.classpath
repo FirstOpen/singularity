@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<classpath>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/singularity/ejbs/singularity-ale-1.0-MAIN.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/singularity/jars/singularity-devicemgr-1.0-MAIN.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/singularity/ejbs/singularity-config-1.0-MAIN.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/singularity/ejbs/singularity-business-1.0-MAIN.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/singularity/sars/singularity-hibernate-1.0-MAIN.sar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/singularity/sars/singularity-hibernate-resource-1.0-MAIN.sar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/singularity/sars/singularity-cep-1.0-MAIN.sar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/singularity/jars/singularity-util-1.0-MAIN.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/singularity/jars/singularity-system-1.0-MAIN.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/singularity/jars/singularity-schema-1.0-MAIN.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/singularity/jars/singularity-security-1.0-MAIN.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/singularity/jars/singularity-admin-1.0-MAIN.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/commons-collections/jars/commons-collections-3.1.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/hibernate/jars/hibernate-3.1.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/ehcache/jars/ehcache-1.1.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/bsh/jars/bsh-1.3.0.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/drools/jars/drools-all-2.0.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/drools/jars/jsr94-1.1.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/drools/jars/jsr94-tck-1.1.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/jini/jars/sun-util-2.1.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/jini/jars/jsk-lib-2.1.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/jini/jars/jsk-platform-2.1.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/jini/jars/tools-2.1.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/RXTXcomm/jars/RXTXcomm-2.1-pre17.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/springframework/jars/spring-1.2.6.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/xmlbeans/jars/xbean-2.0.0.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/xmlbeans/jars/jsr173_api-2.0.0.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/publicobject/jars/declawer-1.0.jar">
+  </classpathentry>
+  <classpathentry kind="output" path="target/classes">
+  </classpathentry>
+</classpath>

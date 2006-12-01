@@ -1,0 +1,11 @@
+
+<project xmlns:maven="jelly:maven" xmlns:util="jelly:util"
+		xmlns:j="jelly:core" xmlns:ant="jelly:ant">
+	
+	<goal name="singularity:dist">
+		<attainGoal name="jar:install" />
+	</goal>
+
+
+</project>
+

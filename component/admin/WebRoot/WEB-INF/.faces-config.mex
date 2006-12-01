@@ -1,0 +1,4 @@
+<JSFFlowViewLayout version="1.0">
+  <Drawing gridVisible="true" snapOn="true" />
+  <JSFFlowResource path="*" location="30,30" dimension="52,36" />
+</JSFFlowViewLayout>

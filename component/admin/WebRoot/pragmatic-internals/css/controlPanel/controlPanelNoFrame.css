@@ -1,0 +1,214 @@
+.panelArea img {
+	display: block;
+	margin: 0;
+}
+
+.panelArea .node img {
+	display: inline;
+	vertical-align: middle;
+	margin: 0px;
+}
+
+.navArea .nodeActive img {
+	display: inline;
+	vertical-align: middle;
+	margin: 0px;
+}
+
+
+.navLayout .nodeActive .name a {
+	text-decoration: none;
+	color: white;	
+}
+.navLayout .nodeActive .name a:hover {
+	text-decoration: none;	
+	color: white;
+}
+.navLayout .nodeActive .name a:visited {
+	text-decoration: none;	
+	color: white;
+}
+.navLayout .nodeActive .name a:active {
+	text-decoration: none;	
+	color: white;
+}
+
+.navLayout .name a {
+	/*text-decoration: underline; KLE*/
+	text-decoration: none;
+	color: #215dc6;
+}
+.navLayout .name a:hover {
+	text-decoration: underline;
+	color: #215dc6;
+}
+.navLayout .name a:visited {
+	/*text-decoration: underline; KLE*/
+	text-decoration: none;
+	color: #215dc6;
+}
+.navLayout .name a:active {
+	/*text-decoration: underline; KLE*/
+	text-decoration: none;
+	color: #215dc6;
+}
+.navLayout .name a:hover {
+	text-decoration: underline;
+	color: #428eff;
+}
+
+.navOpened {	
+	background-image: url("../../img/controlPanel/nav_bg.jpg");
+	background-position: right;
+	background-repeat: repeat-y;
+	margin-bottom: 15px;	
+}
+
+.navOpened .navTitle,
+.navOpened .navTitleOver {
+	height: 22px;
+}
+
+.navOpened .navTitle .titleText {
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+.navOpened .navTitleOver .titleText {
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+.navOpened .titleLeft {
+	width: 14px;
+	vertical-align: top;
+}
+
+.navOpened .titleRight {
+	width: 3px;
+	vertical-align: top;
+}
+
+.navOpened .titleHandle {	
+	background-image: url("../../img/controlPanel/navopened.gif");	
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+.navClosed {
+	background-image: url("../../img/controlPanel/nav_bg.jpg");	
+  	background-position: right;
+  	background-repeat: repeat-y;
+  	margin-bottom: 15px;
+}
+
+.navClosed .navTitle,
+.navClosed .navTitleOver {
+  	height: 22px;
+}
+
+.navTitle .titleHandle,
+.navTitleOver .titleHandle {
+  	width: 20px;
+}
+
+.navClosed .navTitle .titleText,
+.navClosed .navTitleOver .titleText {
+  	font-weight: bold;
+  	vertical-align: middle;
+}
+
+.navClosed .titleLeft {
+  	width: 14px;
+  	vertical-align: top;
+}
+
+.navClosed .titleRight {
+  	width: 3px;
+  	vertical-align: top;
+}
+
+.navClosed .titleHandle {	
+  	background-image: url("../../img/controlPanel/navclosed.gif");		
+  	background-position: left top;
+  	background-repeat: no-repeat;
+}
+
+.navTitle,
+.navTitleOver {
+	cursor: pointer;
+	cursor: hand;
+	-moz-user-select: none;
+}
+
+.navOpened .navTitle .titleText {
+  	color: #215dc6;
+}
+
+.navOpened .navTitleOver .titleText {
+  	color: #428eff;
+}
+
+.navTitle .titleHandle {
+  	background-color: #215dc6;
+}
+
+.navTitleOver .titleHandle {
+  	background-color: #428eff;
+}
+
+.navClosed .navTitle .titleText {
+  	color: #215dc6;
+}
+
+.navClosed .navTitleOver .titleText {
+  	color: #428eff;
+}
+
+
+div.tree {
+  	background-color: #d6dff7;
+  	margin-left: 1px;
+  	margin-right: 1px;
+  	padding: 2px;
+  	padding-top: 3px;
+  	padding-bottom: 10px;
+}
+
+.navOpened .tree {
+  	display: block;
+}
+
+.navClosed .tree {
+  	display: none;
+}
+
+
+
+.nodeActive .name {
+  	background-color: #3878bf;
+}
+
+.node,
+.nodeActive {
+  	margin-top: 4px;
+  	padding: 2px 0px;
+  	vertical-align: middle;  
+}
+
+.node .name,
+.nodeActive .name {
+  	padding: 2px 3px;
+  	margin-left: 2px;
+}
+
+.nodeImage {
+  	background-position: right; 
+  	background-repeat: no-repeat;
+  	padding-left: 11px;
+  	width: 27px;
+}
+
+.nodeImage img {
+	border: none;
+}

@@ -1,0 +1,18 @@
+
+<jboss-web>
+   <!-- Uncomment the security-domain to enable security.  This file defines the security domain
+	handles authentication and authorization.  The value of the security-domain element
+	(eInnovateJ2EESecurityManager) is the JNDI location of the security manager implementation 
+	which implements the AuthenticationManager and RealmMapping security interfaces.
+      <security-domain>java:/jaas/eInnovateJ2EESecurityManager</security-domain>
+
+   <security-domain>java:/jaas/singularity</security-domain>
+
+	<class-loading java2ClassLoadingCompliance="true">
+		<loader-repository>
+  	        org.firstopen.singularity.admin:loader=admin.war
+              <loader-repository-config>java2ParentDelegation=true</loader-repository-config>
+	     </loader-repository>
+	</class-loading>
+   -->
+</jboss-web>

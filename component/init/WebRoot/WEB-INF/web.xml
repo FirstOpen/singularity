@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+
+<!--
+    * Copyright 2005 i-Konect LLC
+    *
+    * Licensed under the Apache License, Version 2.0 (the "License");
+    * you may not use this file except in compliance with the License.
+    * You may obtain a copy of the License at
+    *
+    *      http://www.apache.org/licenses/LICENSE-2.0
+    *
+    * Unless required by applicable law or agreed to in writing, software
+    * distributed under the License is distributed on an "AS IS" BASIS,
+    * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    * See the License for the specific language governing permissions and
+    * limitations under the License.
+-->
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
+
+
+
+    <!-- This web.xml can be used during debugging, when there is no myfaces.jar
+        library available.
+        
+        The faces-config.xml file (that is normally in the myfaces.jar) must be
+        copied to the /WEB-INF directory of the web context.
+        
+        The TLDs (that are normally in the myfaces.jar) must be
+        copied to the /WEB-INF/lib directory of the web context.-->
+    <description>Singularity Administration</description>
+
+    <context-param>
+        <description>Comma separated list of URIs of (additional) faces config files. (e.g. /WEB-INF/my-config.xml) See JSF 1.0 PRD2, 10.3.2</description>
+        <param-name>javax.faces.CONFIG_FILES</param-name>
+        <param-value>/WEB-INF/tiles-faces-config.xml</param-value>
+    </context-param>
+
+    <context-param>
+        <description>State saving method: "client" or "server" (= default) See JSF Specification 2.5.2</description>
+        <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+        <param-value>client</param-value>
+    </context-param>
+
+    <context-param>
+        <description>
+            This parameter tells MyFaces if javascript code should be allowed in the rendered HTML output. If javascript is allowed, command_link anchors will have javascript code that submits the corresponding form. If javascript is not allowed, the state
+            saving info and nested parameters will be added as url parameters. Default: "true"
+        </description>
+        <param-name>org.apache.myfaces.ALLOW_JAVASCRIPT</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <context-param>
+        <description>If true, rendered HTML code will be formatted, so that it is "human readable". i.e. additional line separators and whitespace will be written, that do not influence the HTML code. Default: "true"</description>
+        <param-name>org.apache.myfaces.PRETTY_HTML</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+
+    <!-- Tiles configuration
+        definition files and a listener need to be defined.
+        the listener will initialize JspTilesViewHandlerImpl with tiles definitions.
+    -->
+    <context-param>
+        <param-name>tiles-definitions</param-name>
+        <param-value>/WEB-INF/tiles.xml</param-value>
+    </context-param>
+    
+    
+    <!--  MyFaces Extension Filters, should be usable in all JSF impelmentations -->
+    <filter>
+        <filter-name>MyFacesExtensionsFilter</filter-name>
+        <filter-class>org.apache.myfaces.component.html.util.ExtensionsFilter</filter-class>
+        <init-param>
+            <param-name>maxFileSize</param-name>
+            <param-value>20m</param-value>
+            <description>Set the size limit for uploaded files. Format: 10 - 10 bytes 10k - 10 KB 10m - 10 MB 1g - 1 GB</description>
+        </init-param>
+    </filter>
+
+
+    <filter-mapping>
+        <filter-name>MyFacesExtensionsFilter</filter-name>
+        <url-pattern>*.jsf</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>MyFacesExtensionsFilter</filter-name>
+        <url-pattern>/faces/*</url-pattern>
+    </filter-mapping>
+
+    <!-- Listener, that does all the startup work (configuration, init). -->
+    <listener>
+        <listener-class>org.apache.myfaces.webapp.StartupServletContextListener</listener-class>
+    </listener>
+
+    <!-- Listener, configuration for application -->
+    <listener>
+        <listener-class>org.firstopen.event.agent.Initializer</listener-class>
+    </listener>
+
+
+    <!-- Faces Servlet -->
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>EventAgent</servlet-name>
+        <servlet-class>org.firstopen.event.agent.EventAgent</servlet-class>
+    </servlet>
+  <servlet>
+    <servlet-name>StartupServlet</servlet-name>
+    <display-name>EPM Init</display-name>
+    <description>EPM Initializer - verifies services are started properly</description>
+    <servlet-class>org.firstopen.singularity.epm.StartupServlet</servlet-class>
+  </servlet>
+
+
+    <!-- virtual path mapping -->
+
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- extension mapping -->
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.jsf</url-pattern>
+    </servlet-mapping>
+    <!-- Define the pushlet servlet -->
+
+
+    <!-- Define the Servlet Mappings. -->
+
+
+    <servlet-mapping>
+        <servlet-name>EventAgent</servlet-name>
+        <url-pattern>/servlet/EventAgent</url-pattern>
+    </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StartupServlet</servlet-name>
+    <url-pattern>/singularity/StartupServlet</url-pattern>
+  </servlet-mapping>
+
+
+
+
+    <!-- Welcome files -->
+
+    <welcome-file-list>
+        <welcome-file>welcome.jsp</welcome-file>
+    </welcome-file-list>
+
+
+    <error-page>
+        <exception-type>javax.servlet.ServletException</exception-type>
+        <location>/faces/error.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>javax.faces.FacesException</exception-type>
+        <location>/faces/error.jsp</location>
+    </error-page>
+
+    <jsp-config>
+        <taglib>
+            <taglib-uri>http://struts.apache.org/tags-tiles</taglib-uri>
+            <taglib-location>tld/struts-tiles.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/WEB-INF/tld/pragmatic-controls.tld</taglib-uri>
+            <taglib-location>/WEB-INF/tld/pragmatic-controls.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>HtmlAdaptor</web-resource-name>
+            <description>Singularity Security Framework</description>
+            <url-pattern>/jsp/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>SingularityAdmin</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>SingularityRealm</realm-name>
+        <form-login-config>
+            <form-login-page>/login.jsf</form-login-page>
+            <form-error-page>/error.jsf</form-error-page>
+        </form-login-config>
+
+    </login-config>
+    <security-role>
+        <role-name>SingularityAdmin</role-name>
+    </security-role>
+</web-app>

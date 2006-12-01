@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Start of element declarations for PML Core  -->
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="unqualified"
+    targetNamespace="urn:epc:specification:interchange:PMLCore:xml:schema:1"
+    xmlns:pmlcore="urn:epc:specification:interchange:PMLCore:xml:schema:1"
+    xmlns:pmlidentifier="urn:epc:specification:universal:Identifier:xml:schema:1"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:import
+        namespace="urn:epc:specification:universal:Identifier:xml:schema:1"
+        schemaLocation="./identifer.xsd" />
+    <xsd:element name="Sensor" type="pmlcore:SensorType" />
+    <xsd:complexType name="AnyXMLContentType">
+        <xsd:sequence>
+            <xsd:any namespace="##any" processContents="skip" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DataType">
+        <xsd:choice>
+            <xsd:element name="Text" type="xsd:string" />
+            <xsd:element name="Binary" type="xsd:hexBinary" />
+            <xsd:element name="XML" type="pmlcore:AnyXMLContentType" />
+        </xsd:choice>
+    </xsd:complexType>
+    <xsd:complexType name="ObservationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" ref="pmlidentifier:ID" />
+            <xsd:element name="DateTime" type="xsd:dateTime" />
+            <xsd:element minOccurs="0" name="Command" type="xsd:string" />
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Tag"
+                type="pmlcore:TagType" />
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Data"
+                type="pmlcore:DataType" />
+        </xsd:sequence>
+    
+    </xsd:complexType>
+    <xsd:complexType name="SensorType">
+        <xsd:sequence>
+            <xsd:element ref="pmlidentifier:ID" />
+            <xsd:element maxOccurs="unbounded" name="Observation"
+                type="pmlcore:ObservationType" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TagType">
+        <xsd:sequence>
+            <xsd:element ref="pmlidentifier:ID" />
+            <xsd:element minOccurs="0" name="Data"
+                type="pmlcore:DataType" />
+            <xsd:element maxOccurs="unbounded" minOccurs="0"
+                ref="pmlcore:Sensor" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="uriArray">
+        <xsd:list itemType="xsd:anyURI" />
+    </xsd:simpleType>
+    <xsd:complexType name="Document">
+        <xsd:choice>
+            <xsd:element name="id" type="xsd:string" />
+        </xsd:choice>
+    </xsd:complexType>
+</xsd:schema>
+<!-- End of element declarations for PML Core  Observations-->

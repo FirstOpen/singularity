@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ale:ECReports xmlns:ale="urn:epcglobal:ale:xsd:1" 
+               xmlns:epcglobal="urn:epcglobal:xsd:1" 
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+               xsi:schemaLocation="urn:epcglobal:ale:xsd:1 Ale.xsd" 
+               schemaVersion="1.0" 
+               creationDate="2003-08-06T10:54:06.444-05:00" 
+               specName="EventCycle1" 
+               date="2003-08-06T10:54:06.444-05:00" 
+               ALEID="Edge34" 
+               totalMilliseconds="3034" 
+               terminationCondition="DURATION">
+    <reports>
+        <report reportName="report1">
+            <group>
+                <groupList>
+                    <member><tag>urn:epc:tag:gid-64-i:10.50.1000</tag></member>
+                    <member><tag>urn:epc:tag:gid-64-i:10.50.1001</tag></member>
+                </groupList>
+            </group>
+        </report>
+        <report reportName="report2">
+            <group><groupCount><count>6847</count></groupCount></group>
+        </report>
+        <report reportName="report3">
+            <group name="urn:epc:pat:sgtin-64:3.0037000.12345.*">
+               <groupCount><count>2</count></groupCount>
+            </group>
+            <group name="urn:epc:pat:sgtin-64:3.0037000.55555.*">
+               <groupCount><count>3</count></groupCount>
+            </group>
+            <group>
+               <groupCount><count>6842</count></groupCount>
+            </group>
+        </report>
+    </reports>
+</ale:ECReports>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Start of Identifier info schema-->
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="urn:epc:specification:universal:Identifier:xml:schema:1"
+    xmlns:pmlidentifier="urn:epc:specification:universal:Identifier:xml:schema:1"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0">
+    <xsd:element name="ID" type="pmlidentifier:IdentifierType" />
+    <xsd:complexType name="IdentifierType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:token">
+                <xsd:attribute name="schemeID" type="xsd:token"
+                    use="optional" />
+                <xsd:attribute name="schemeAgencyID" type="xsd:token"
+                    use="optional" />
+                <xsd:attribute name="schemeVersionID" type="xsd:token"
+                    use="optional" />
+                <xsd:attribute name="schemeURI" type="xsd:anyURI"
+                    use="optional" />
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>
+<!-- End of Identifier info schema-->

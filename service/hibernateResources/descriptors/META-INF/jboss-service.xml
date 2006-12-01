@@ -1,0 +1,34 @@
+<server>
+	<mbean code="org.hibernate.jmx.HibernateService" name="jboss.jca:service=HibernateFactory, name=HibernateFactory">
+    		<depends>jboss.jca:service=RARDeployer</depends>
+    		<depends>jboss.jca:service=LocalTxCM,name=mysqlDBPool</depends>
+    	    <depends>jboss:service=TransactionManager</depends>
+        
+        	<attribute name="JndiName">java:/hibernate/ale/SessionFactory</attribute>
+    		<attribute name="Datasource">java:/mysqlDBPool</attribute>
+    		<attribute name="Dialect">org.hibernate.dialect.MySQLInnoDBDialect</attribute>
+    		<attribute name="TransactionStrategy">org.hibernate.transaction.JTATransactionFactory</attribute>
+    		<attribute name="TransactionManagerLookupStrategy">
+        		org.hibernate.transaction.JBossTransactionManagerLookup
+    		</attribute>
+		<attribute name="FlushBeforeCompletionEnabled">true</attribute>
+		<attribute name="AutoCloseSessionEnabled">true</attribute>
+		<attribute name="MaximumFetchDepth">5</attribute>
+		<attribute name="SecondLevelCacheEnabled">true</attribute>
+		<attribute name="CacheProviderClass">org.hibernate.cache.EhCacheProvider</attribute>
+		<attribute name="QueryCacheEnabled">true</attribute>
+    	<attribute name="ShowSqlEnabled">false</attribute>
+		<attribute name="MapResources">
+            org/firstopen/singularity/config/LogicalDevice.hbm.xml,
+            org/firstopen/singularity/config/DeviceProfile.hbm.xml,
+            org/firstopen/singularity/system/Tag.hbm.xml,
+            org/firstopen/singularity/system/Sensor.hbm.xml,
+            org/firstopen/singularity/system/Reader.hbm.xml,
+            org/firstopen/singularity/system/ReaderEvent.hbm.xml,
+            org/firstopen/singularity/cep/StatefulRuleBase.hbm.xml,
+			org/firstopen/singularity/ale/ECSpec.hbm.xml,
+			org/firstopen/singularity/ale/ECBoundarySpec.hbm.xml,
+			org/firstopen/singularity/ale/ECTime.hbm.xml,
+      </attribute>
+	</mbean>
+</server>

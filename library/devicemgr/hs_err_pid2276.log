@@ -1,0 +1,124 @@
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d7596ce, pid=2276, tid=3892
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0_06-b05 mixed mode, sharing)
+# Problematic frame:
+# V  [jvm.dll+0x796ce]
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00a6dd78):  JavaThread "CompilerThread0" daemon [_thread_in_vm, id=3892]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x6980e1b0
+
+Registers:
+EAX=0x6980e130, EBX=0x2aee3fe0, ECX=0x2b4c3580, EDX=0x2b82df58
+ESP=0x02c8f8e0, EBP=0x02c8f90c, ESI=0x2b4c3578, EDI=0x00000000
+EIP=0x6d7596ce, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x02c8f8e0)
+0x02c8f8e0:   00a6e36c 2b82df58 00a6e368 6d7ca95e
+0x02c8f8f0:   2b4c3578 6d7ca8d7 2b82df58 2b4c3578
+0x02c8f900:   00a6e36c 00a6e358 00a6e368 02c8f948
+0x02c8f910:   6d7a427b 2b82df58 2b82df58 2b4c3578
+0x02c8f920:   c0000000 00000001 00000000 00a6e358
+0x02c8f930:   00a6dd78 02c8f9d8 2b4c3508 6d7a4096
+0x02c8f940:   00000004 00a6dd78 02c8f980 6d7a45bc
+0x02c8f950:   00a6e358 00a6e35c 00a6e36c c0000000 
+
+Instructions: (pc=0x6d7596ce)
+0x6d7596be:   74 24 0c 57 8b b9 84 00 00 00 8b 46 08 8d 4e 08
+0x6d7596ce:   ff 90 80 00 00 00 85 c0 74 06 8b b6 8c 00 00 00 
+
+
+Stack: [0x02c50000,0x02c90000),  sp=0x02c8f8e0,  free space=254k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x796ce]
+V  [jvm.dll+0xc427b]
+V  [jvm.dll+0xc45bc]
+V  [jvm.dll+0xc4fdc]
+V  [jvm.dll+0xc54b3]
+V  [jvm.dll+0x42357]
+V  [jvm.dll+0x4240d]
+V  [jvm.dll+0x424f4]
+V  [jvm.dll+0x41574]
+
+
+Current CompileTask:
+HotSpot Client Compiler:363   b  java.util.HashMap$ValueIterator.next()Ljava/lang/Object; (8 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00a6f080 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=3824]
+=>0x00a6dd78 JavaThread "CompilerThread0" daemon [_thread_in_vm, id=3892]
+  0x00a6cf60 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2980]
+  0x00a480b8 JavaThread "Finalizer" daemon [_thread_blocked, id=3632]
+  0x0003fba8 JavaThread "Reference Handler" daemon [_thread_blocked, id=4044]
+  0x00036b30 JavaThread "main" [_thread_blocked, id=3068]
+
+Other Threads:
+  0x00a68250 VMThread [id=2124]
+  0x00a70400 WatcherThread [id=1404]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 576K, used 261K [0x16b70000, 0x16c10000, 0x17f20000)
+  eden space 512K,  40% used [0x16b70000, 0x16ba4120, 0x16bf0000)
+  from space 64K,  82% used [0x16bf0000, 0x16bfd400, 0x16c00000)
+  to   space 64K,   0% used [0x16c00000, 0x16c00000, 0x16c10000)
+ tenured generation   total 3628K, used 3309K [0x17f20000, 0x182ab000, 0x26b70000)
+   the space 3628K,  91% used [0x17f20000, 0x1825b650, 0x1825b800, 0x182ab000)
+ compacting perm gen  total 8192K, used 4545K [0x26b70000, 0x27370000, 0x2ab70000)
+   the space 8192K,  55% used [0x26b70000, 0x26fe0478, 0x26fe0600, 0x27370000)
+    ro space 8192K,  66% used [0x2ab70000, 0x2b0cbcc0, 0x2b0cbe00, 0x2b370000)
+    rw space 12288K,  46% used [0x2b370000, 0x2b912060, 0x2b912200, 0x2bf70000)
+
+Dynamic libraries:
+0x00400000 - 0x0040c000 	I:\java\jdk1.5.0_06\bin\java.exe
+0x7c900000 - 0x7c9b0000 	D:\WINXP\system32\ntdll.dll
+0x7c800000 - 0x7c8f4000 	D:\WINXP\system32\kernel32.dll
+0x77dd0000 - 0x77e6b000 	D:\WINXP\system32\ADVAPI32.dll
+0x77e70000 - 0x77f01000 	D:\WINXP\system32\RPCRT4.dll
+0x77c10000 - 0x77c68000 	D:\WINXP\system32\MSVCRT.dll
+0x6d6e0000 - 0x6d874000 	I:\java\jdk1.5.0_06\jre\bin\client\jvm.dll
+0x77d40000 - 0x77dd0000 	D:\WINXP\system32\USER32.dll
+0x77f10000 - 0x77f57000 	D:\WINXP\system32\GDI32.dll
+0x76b40000 - 0x76b6d000 	D:\WINXP\system32\WINMM.dll
+0x6d2f0000 - 0x6d2f8000 	I:\java\jdk1.5.0_06\jre\bin\hpi.dll
+0x76bf0000 - 0x76bfb000 	D:\WINXP\system32\PSAPI.DLL
+0x6d6b0000 - 0x6d6bc000 	I:\java\jdk1.5.0_06\jre\bin\verify.dll
+0x6d370000 - 0x6d38d000 	I:\java\jdk1.5.0_06\jre\bin\java.dll
+0x6d6d0000 - 0x6d6df000 	I:\java\jdk1.5.0_06\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dmaven.home=I:\Maven\maven-1.1.b2 -Dtools.jar=I:\java\jdk1.5.0_06\lib\tools.jar -Dforehead.conf.file=I:\Maven\maven-1.1.b2\bin\forehead.conf -Xmx256m
+java_command: com.werken.forehead.Forehead
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=I:\java\jdk1.5.0_06
+PATH=D:\WINXP\Microsoft.NET\Framework\v1.1.4322;D:\Program Files\Microsoft.NET\SDK\v1.1\Bin;D:\Program Files\Windows Resource Kits\Tools\;D:\WINXP\system32;D:\WINXP;D:\WINXP\System32\Wbem;I:\TortoiseCVS;I:\env\bin;i:\env\lib;I:\java\jdk1.5.0_04\bin;D:\Program Files\ATI Technologies\ATI.ACE\;D:\Program Files\Microsoft SQL Server\80\Tools\Binn\;I:\Enabler\Runtime;D:\Program Files\Intel\DMIX;i:\cygwin\bin;D:\Program Files\OpenSSH\bin;D:\Program Files\FastSum;D:\Program Files\Microsoft SQL Server\90\Tools\binn\;D:\Program Files\MySQL\MySQL Server 5.0\bin;I:\Apache\maven-2.0\bin;I:\Maven\maven-1.1.b2\bin;D:\Program Files\Novosoft\C2J\Bin;C:\Sun\jwsdp-1.6\jwsdp-shared\bin;;D:\PROGRA~1\COMMON~1\MUVEET~1\030625
+USERNAME=TomRose
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 15 Model 3 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 2
+
+CPU:total 2 family 15, cmov, cx8, fxsr, mmx, sse, sse2, ht
+
+Memory: 4k page, physical 1048044k(265096k free), swap 2520176k(1771420k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.5.0_06-b05) for windows-x86, built on Nov 10 2005 11:12:14 by "java_re" with MS VC++ 6.0
+
