@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+         http://java.sun.com/xml/ns/j2ee/ejb-jar_2_1.xsd"
+         version="2.1">
+<display-name>Singularity 1.0 Business Service </display-name>
+  <enterprise-beans>
+	<session>
+		<ejb-name>InventorySLSB</ejb-name>
+		<home>org.firstopen.singularity.business.inventory.InventorySLSBHome</home>
+		<remote>org.firstopen.singularity.business.inventory.InventorySLSBRemote</remote>
+		<ejb-class>org.firstopen.singularity.business.inventory.InventorySLSB</ejb-class>
+		<session-type>Stateless</session-type>
+		<transaction-type>Container</transaction-type>
+	</session>
+  </enterprise-beans>
+</ejb-jar>

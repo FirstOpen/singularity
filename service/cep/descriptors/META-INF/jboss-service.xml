@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server>
+  <mbean code="org.firstopen.singularity.cep.RuleService" name="cep.singularity.firstopen.org:service=RuleService">
+  <depends>jboss.jca:service=HibernateFactory, name=HibernateFactory</depends>
+  <depends>jboss:service=TransactionManager</depends>
+  </mbean>
+</server>

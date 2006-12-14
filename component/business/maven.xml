@@ -1,0 +1,61 @@
+
+<project xmlns:maven="jelly:maven" xmlns:util="jelly:util" xmlns:j="jelly:core"
+		xmlns:ant="jelly:ant">
+	
+	<goal name="singularity:dist" prereqs="singularity:xdoclet">
+		<attainGoal name="ejb:install" />
+	</goal>
+	
+	
+	<goal name="singularity:xdoclet"
+			description="Build the Hibernate Files">
+		
+		<echo>Building ${pom.Description} Hibernate Files...</echo>
+		
+		
+		<taskdef name="hibernatedoclet" classname="xdoclet.modules.hibernate.HibernateDocletTask">
+			<classpath>
+				<path refid="maven.dependency.classpath"/>
+				
+				<pathelement path="${pom.getDependencyPath('xdoclet:xdoclet-hibernate-module')}"/>
+				<pathelement path="${pom.getDependencyPath('xdoclet:xdoclet')}"/>
+				<pathelement path="${pom.getDependencyPath('xjavadoc:xjavadoc')}"/>
+				<pathelement path="${pom.getDependencyPath('xdoclet:xdoclet-xdoclet-module')}"/>
+				<pathelement path="${pom.getDependencyPath('commons-collections:commons-collections')}"/>
+				<pathelement path="${pom.getDependencyPath('commons-logging:commons-logging')}"/>
+				<pathelement path="${pom.getDependencyPath('log4j:log4j')}"/>
+        <!--
+        -->
+			</classpath>
+		</taskdef>
+		
+		<hibernatedoclet>
+		<!--
+            encoding="${maven.xdoclet.hibernatedoclet.encoding}"
+            docencoding="${maven.xdoclet.hibernatedoclet.docencoding}"
+		   -->
+			<ant:setProperty name="excludedTags" value="${maven.xdoclet.hibernatedoclet.excludedTags}"/>
+			<ant:setProperty name="destDir" value="${singularity.xdoclet.hibernatedoclet.destDir}"/>
+			<ant:setProperty name="verbose" value="${singularity.xdoclet.hibernatedoclet.verbose}"/>
+			
+			<fileset dir="${maven.src.dir}">
+				<j:set var="fileset_index_include_var_name" value="singularity.xdoclet.hibernatedoclet.fileset.include"/>
+				<j:set var="fileset_index_exclude_var_name" value="singularity.xdoclet.hibernatedoclet.fileset.exclude"/>
+				<j:if test="${context.getVariable(fileset_index_include_var_name) != null}">
+					<include name="${context.getVariable(fileset_index_include_var_name)}"/>
+				</j:if>
+				<j:if test="${context.getVariable(fileset_index_exclude_var_name) != null}">
+					<exclude name="${context.getVariable(fileset_index_exclude_var_name)}"/>
+				</j:if>
+			</fileset>
+			<hibernate version="${singularity.xdoclet.hibernatedoclet.hibernate.Version}" />
+		
+		</hibernatedoclet>
+	
+	
+	
+	</goal>
+
+
+</project>
+

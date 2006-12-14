@@ -1,0 +1,91 @@
+/*--------------------------------------------------|
+| dTree 2.05 | www.destroydrop.com/javascript/tree/ |
+|---------------------------------------------------|
+| Copyright (c) 2002-2003 Geir Landrö               |
+|--------------------------------------------------*/
+
+.dtree {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #666;
+	white-space: nowrap;
+}
+.dtree img {
+	border: 0px;
+	vertical-align: middle;
+}
+.dtree a {
+	color: #333;
+	text-decoration: none;
+}
+.dtree a.node, .dtree a.nodeSel {
+	white-space: nowrap;
+	padding: 1px 2px 1px 2px;	
+}
+.dtree a.node:hover, .dtree a.nodeSel:hover {
+	color: #4169E1;
+}
+.dtree a.nodeSel {
+	background-color: #c0d2ec;
+}
+.dtree .clip {
+	overflow: hidden;
+}
+
+
+
+.ctxMenu {
+	position: absolute;
+	display: none;
+	background-color: menu;
+	font-family: ms sans serif,helvetica,arial,sans-serif;
+	font-size: 8pt;	
+	border: 2px outset;
+}
+.ctxMenu p {
+	white-space:nowrap;
+	padding: 2px 5px 2px 10px;
+	margin: 0px;
+	/*border: 1px outset;*/
+	cursor: pointer;
+}
+.ctxMenu p:hover{
+	background-color: highlight;
+	color: White;	
+}
+.menuItem { 
+	font-family:ms sans serif,helvetica,arial,sans-serif; 
+	font-size:8pt; 
+	width:100%; 
+	padding-left:16; 
+	background-color:menu; 
+	color:black; 
+	padding-top: 2px; 
+	padding-bottom: 2px; 
+	margin-bottom:0; 
+	margin-top:0; 
+	cursor: default; 
+}  
+.menuItemDefault { 
+	font-family:ms sans serif,helvetica,arial,sans-serif;  
+	font-size:8pt;  
+	font-weight:bold;  
+	width:100%;  
+	padding-left:16;  
+	background-Color:menu;  
+	color:black;  
+	padding-top: 2px;  
+	padding-bottom: 2px;  
+	cursor: default; 
+}  
+.highlightItem {  
+	font-family:ms sans serif,helvetica,arial, sans-serif;  
+	font-size:8pt;  
+	width:100%;  
+	padding-left:16;  
+	background-color:highlight;  
+	color:white;  
+	padding-top: 2px;  
+	padding-bottom: 2px;  
+	cursor: default; 
+}

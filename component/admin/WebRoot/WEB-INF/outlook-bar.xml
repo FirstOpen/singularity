@@ -1,0 +1,43 @@
+<outlookBar name="OutlookBar">
+	<panel id="frequent_tasks" title="Frequent Tasks" resourceId="FrequentTasksId">
+		<item image="../../images/home.gif" title="Home" frame="_self" resourceId="HomeId">
+			<action name="index.jsp"/>											
+		</item>       
+		<item image="../../images/users.gif" title="Users" frame="_self" resourceId="UsersId">
+			<action name="users.jsp">        
+				<param name="bogus1" value="bogus2"/>					              
+			</action>
+		</item>
+		<item image="../../images/mail.gif" title="Mail" frame="_self" resourceId="MailId">
+      		<action name="mail.jsp">
+      			<param name="bogus3" value="bogus4"/>					
+            	<param name="bogus5" value="bogus6"/>					
+			</action>
+      	</item>		
+	</panel>
+	<panel id="administrations" title="Administrations" resourceId="AdministrationsId">
+		<item image="../../images/databases.gif" title="Databases" frame="_self" resourceId="DatabasesId">
+      		<action name="databases.jsp"/>
+      	</item>
+      	<item image="../../images/servers.gif" title="Servers" frame="_self" resourceId="ServersId">
+      		<action name="servers.jsp"/>
+      	</item>
+      	<item image="../../images/security.gif" title="Security" frame="_self" resourceId="SecurityId">
+      		<action name="security.jsp"/>
+      	</item>
+		<item image="../../images/services.gif" title="Services" frame="_self" resourceId="ServicesId">
+      		<action name="services.jsp">
+      			<param name="bogus3" value="bogus4"/>					
+            	<param name="bogus5" value="bogus6"/>					
+			</action>
+      	</item>
+	</panel>
+	<panel id="reports" title="Reports" resourceId="ReportsId">
+		<item image="../../images/statistics.gif" title="Statistics" frame="_self" resourceId="StatisticsId">
+      		<action name="statistics.jsp"/>
+      	</item>
+		<item image="../../images/charts.gif" title="Chart" frame="_self" resourceId="ChartsId">
+      		<action name="charts.jsp"/>
+      	</item>
+	</panel>
+</outlookBar>

@@ -1,0 +1,43 @@
+
+<project xmlns:maven="jelly:maven" xmlns:util="jelly:util" xmlns:j="jelly:core"
+		xmlns:ant="jelly:ant" xmlns:artifact="artifact">
+	
+	<goal name="singularity:dist">
+		<attainGoal name="singularity:xmlschema" />
+		<artifact:install
+				artifact="${maven.build.dir}/${maven.jar.final.name}"
+				type="jar"
+				project="${pom}" />
+	</goal>
+	
+	<goal name="singularity:xmlschema" description="Generate the XML Schema with XMLBeans">
+	
+		<echo>Generating ${pom.Description} XMLBeans...</echo>
+		
+		<taskdef name="xmlbean" classname="org.apache.xmlbeans.impl.tool.XMLBean">
+			<classpath>
+				<path refid="maven.dependency.classpath"/>
+			</classpath>
+		</taskdef>
+		
+		<xmlbean>
+			<ant:setProperty name="schema" value="${basedir}/schemas"/>
+			<ant:setProperty name="destfile" value="${maven.build.dir}/${maven.jar.final.name}"/>
+			<ant:setProperty name="srcgendir" value="${maven.build.dir}/gensrc"/>
+			<ant:setProperty name="classgendir" value="${maven.build.dest}"/>
+			<ant:setProperty name="classpathref" value="maven.dependency.classpath"/>
+			<ant:setProperty name="javasource" value="1.5"/>
+			<ant:setProperty name="source" value="1.5"/>
+			<ant:setProperty name="debug" value="on"/>
+		</xmlbean>
+		
+		<delete dir="${maven.build.dest}/schemaorg_apache_xmlbeans" />
+		<ant:delete verbose="false" failonerror="false">
+			<ant:fileset dir="${maven.build.dest}">
+				<ant:include name="*.properties" />
+			</ant:fileset>
+		</ant:delete>
+	</goal>
+
+</project>
+

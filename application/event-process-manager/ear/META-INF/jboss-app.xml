@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE jboss-app PUBLIC "-//JBoss//DTD J2EE Application 1.4//EN"
+"http://www.jboss.org/j2ee/dtd/jboss-app_4_0.dtd">
+<jboss-app>
+    <loader-repository>
+        org.firstopen.singularity:loader=singularity.ear
+        <loader-repository-config>java2ParentDelegation=false</loader-repository-config>
+    </loader-repository>
+    <module>
+        <service>singularity-hibernate-1.0-MAIN.sar</service>
+    </module>
+    <module>
+        <service>singularity-hibernate-resource-1.0-MAIN.sar</service>
+    </module>
+    <module>
+        <service>singularity-cep-1.0-MAIN.sar</service>
+    </module> 
+</jboss-app>

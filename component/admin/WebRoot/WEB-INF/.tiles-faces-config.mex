@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JSFFlowViewLayout version="1.0">
+  <Drawing gridVisible="true" snapOn="true" />
+  <JSFFlowResource path="*" location="273,0" dimension="52,36" />
+  <JSFFlowResource path="/jsp/body/carterNote.jsf" location="480,30" dimension="210,36" />
+  <JSFFlowResource path="/jsp/body/welcome.jsp" location="240,140" dimension="153,36" />
+  <JSFFlowResource path="/jsp/body/login.jsp" location="20,140" dimension="134,36" />
+  <JSFFlowResource path="/jsp/body/carterNote1.jsp" location="80,220" dimension="170,36" />
+  <JSFFlowResource path="/jsp/body/carterNote2.jsp" location="80,340" dimension="170,36" />
+  <JSFFlowNavigationCase id="*,/jsp/body/carterNote.jsf,success,j_security_check" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="325,18" />
+      <AbsolutePoint location="585,18" />
+      <AbsolutePoint location="585,30" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="*,/jsp/body/welcome.jsp,ok,nav_welcome" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="299,36" />
+      <AbsolutePoint location="299,140" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/jsp/body/carterNote1.jsp,/jsp/body/carterNote2.jsp,success,#{carterNote.next}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="165,256" />
+      <AbsolutePoint location="165,340" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+</JSFFlowViewLayout>
+

@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Tree</title>
+	<script type="text/javascript" src="domutils.js"></script>
+<style type="text/css">
+
+#canvas {
+	position:absolute;
+	left:300px; top:8px;
+	width:300px;
+	border:1px solid silver;
+}
+
+.tree-wrap 	{
+	font: 11px "Lucida Grande",LucidaGrande,verdana,sans-serif;
+	width: 200px;
+}
+
+.tree-list {
+	height:300px;
+	border-right: 1px solid silver;
+	border-bottom: 1px solid silver;
+	border-left: 1px solid silver;
+	overflow:scroll;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+
+.tree-header {
+	color:white;
+	padding-left:2px;
+	padding-bottom:2px;
+	border:1px solid #458cee;
+	background: transparent url(img/aquaHeaderIcon.gif) 0 -5px repeat-x;
+	text-shadow:1px 1px 1px #333;
+}
+
+.tree-wrap a:link, .tree-wrap a:visited {
+	display: block;
+	height:14px;
+	padding-left: 15px;
+	border-bottom: 1px solid #eee;
+	text-decoration: none;
+	color:gray;
+}
+
+.tree-wrap a.last:link {
+	border-bottom: 0;
+}
+
+.tree-wrap a:hover {
+	color: #458cee;
+	background-color: #f6f6f6;
+}
+
+.tree-wrap a.container-link:link, 
+.tree-wrap a.container-link:visited {
+	background: white url(img/aqua_arrow-side.gif) 1px 2px no-repeat;
+}	
+html>body .tree-wrap a.container-link:link, 
+html>body .tree-wrap a.container-link:visited {
+	background: white url(img/aqua_arrow-side.png) 1px 0 no-repeat;
+}
+
+.tree-wrap a.container-link.active:link, 
+.tree-wrap a.container-link.active:visited {
+	background: white url(img/aqua_arrow-down.gif) 1px 2px no-repeat;
+}
+html>body .tree-wrap a.container-link.active:link, 
+html>body .tree-wrap a.container-link.active:visited {
+	background: white url(img/aqua_arrow-down.png) 1px 0 no-repeat;
+}
+
+.tree-wrap a.container-link:hover {
+	background: #f6f6f6 url(img/aqua_arrow-side.gif) 1px 2px no-repeat;
+}
+html>body .tree-wrap a.container-link:hover {
+	background: #f6f6f6 url(img/aqua_arrow-side.png) 1px 0 no-repeat;
+}
+
+.tree-wrap a.container-link.active:hover {
+	background: #f6f6f6 url(img/aqua_arrow-down.gif) 1px 2px no-repeat;
+}
+html>body .tree-wrap a.container-link.active:hover {
+	background: #f6f6f6 url(img/aqua_arrow-down.png) 1px 0 no-repeat;
+}
+
+.tree-wrap ul a:link, 
+.tree-wrap .ul a:visited,
+.tree-wrap .ul a:hover,
+.tree-wrap .ul a.container-link:link, 
+.tree-wrap .ul a.container-link:visited,
+.tree-wrap .ul a.container-link:hover,
+.tree-wrap .ul a.container-link.active:link, 
+.tree-wrap .ul a.container-link.active:visited,
+.tree-wrap .ul a.container-link.active:hover { padding-left:15px; background-position:1px 2px }
+
+html>body .tree-wrap .ul a:link, 
+html>body .tree-wrap .ul a:visited,
+html>body .tree-wrap .ul a:hover,
+html>body .tree-wrap .ul a.container-link:link, 
+html>body .tree-wrap .ul a.container-link:visited,
+html>body .tree-wrap .ul a.container-link:hover,
+html>body .tree-wrap .ul a.container-link.active:link, 
+html>body .tree-wrap .ul a.container-link.active:visited,
+html>body .tree-wrap .ul a.container-link.active:hover { padding-left:15px; background-position:1px 0 }
+
+
+.tree-wrap .ul .ul a:link,
+.tree-wrap .ul .ul a:visited,
+.tree-wrap .ul .ul a:hover,
+.tree-wrap .ul .ul a.container-link:link,
+.tree-wrap .ul .ul a.container-link:visited,
+.tree-wrap .ul .ul a.container-link:hover,
+.tree-wrap .ul .ul a.container-link.active:link,
+.tree-wrap .ul .ul a.container-link.active:visited,
+.tree-wrap .ul .ul a.container-link.active:hover { padding-left:30px; background-position:16px 2px }
+
+html>body .tree-wrap .ul .ul a:link,
+html>body .tree-wrap .ul .ul a:visited,
+html>body .tree-wrap .ul .ul a:hover,
+html>body .tree-wrap .ul .ul a.container-link:link,
+html>body .tree-wrap .ul .ul a.container-link:visited,
+html>body .tree-wrap .ul .ul a.container-link:hover,
+html>body .tree-wrap .ul .ul a.container-link.active:link,
+html>body .tree-wrap .ul .ul a.container-link.active:visited,
+html>body .tree-wrap .ul .ul a.container-link.active:hover { padding-left:30px; background-position:16px 0 }
+
+
+
+.tree-wrap .ul .ul .ul a:link,
+.tree-wrap .ul .ul .ul a:visited,
+.tree-wrap .ul .ul .ul a:hover,
+.tree-wrap .ul .ul .ul a.container-link:link,
+.tree-wrap .ul .ul .ul a.container-link:visited,
+.tree-wrap .ul .ul .ul a.container-link:hover,
+.tree-wrap .ul .ul .ul a.container-link.active:link,
+.tree-wrap .ul .ul .ul a.container-link.active:visited,
+.tree-wrap .ul .ul .ul a.container-link.active:hover { padding-left:45px; background-position:31px 2px }
+
+html>body .tree-wrap .ul .ul .ul a:link,
+html>body .tree-wrap .ul .ul .ul a:visited,
+html>body .tree-wrap .ul .ul .ul a:hover,
+html>body .tree-wrap .ul .ul .ul a.container-link:link,
+html>body .tree-wrap .ul .ul .ul a.container-link:visited,
+html>body .tree-wrap .ul .ul .ul a.container-link:hover,
+html>body .tree-wrap .ul .ul .ul a.container-link.active:link,
+html>body .tree-wrap .ul .ul .ul a.container-link.active:visited,
+html>body .tree-wrap .ul .ul .ul a.container-link.active:hover { padding-left:45px; background-position:31px 0 }
+
+
+
+
+.tree-wrap .ul .ul .ul .ul a:link,
+.tree-wrap .ul .ul .ul .ul a:visited,
+.tree-wrap .ul .ul .ul .ul a:hover,
+.tree-wrap .ul .ul .ul .ul a.container-link:link,
+.tree-wrap .ul .ul .ul .ul a.container-link:visited,
+.tree-wrap .ul .ul .ul .ul a.container-link:hover,
+.tree-wrap .ul .ul .ul .ul a.container-link.active:link,
+.tree-wrap .ul .ul .ul .ul a.container-link.active:visited,
+.tree-wrap .ul .ul .ul .ul a.container-link.active:hover { padding-left:60px; background-position:46px 2px }
+
+html>body .tree-wrap .ul .ul .ul .ul a:link,
+html>body .tree-wrap .ul .ul .ul .ul a:visited,
+html>body .tree-wrap .ul .ul .ul .ul a:hover,
+html>body .tree-wrap .ul .ul .ul .ul a.container-link:link,
+html>body .tree-wrap .ul .ul .ul .ul a.container-link:visited,
+html>body .tree-wrap .ul .ul .ul .ul a.container-link:hover,
+html>body .tree-wrap .ul .ul .ul .ul a.container-link.active:link,
+html>body .tree-wrap .ul .ul .ul .ul a.container-link.active:visited,
+html>body .tree-wrap .ul .ul .ul .ul a.container-link.active:hover { padding-left:60px; background-position:46px 0 }
+
+
+
+
+</style>
+<script type="text/javascript">
+
+/** @const String */
+var TREE_WRAP_CLASS_NAME 		=  "tree-wrap";
+/** @const String */
+var TREE_LIST_CLASS_NAME 		=  "tree-list";
+/** @const String */
+var CONTAINER_ITEM_CLASS_NAME 	=  "container-item";
+/** @const String */
+var CONTAINER_LINK_CLASS_NAME 	=  "container-link";
+
+/** @var HTMLElement */ 
+var treeWrap;
+/** @var HTMLElement */ 
+var treeList;
+/** @var HTMLElement */ 
+var containerNode;
+/** @var HTMLElement */ 
+var containerNodeLink;
+/** @var HTMLElement */ 
+var subList;
+
+/**
+ *	@param Evt
+ *	@return void
+ */
+function treeContainerNodeClicked(evt) {
+	var evt = new Evt(evt);
+	_findTreeElements(evt);
+	_toggleTreeNode();
+}
+
+/**
+ *	@param Evt
+ *	@return void
+ */
+function _findTreeElements(evt) {
+	containerNodeLink 	= evt.getSource();	
+	containerNode 		= DomUtils.getFirstAncestorByClassName(
+												containerNodeLink,
+												CONTAINER_ITEM_CLASS_NAME);												
+	treeList			= DomUtils.getFirstAncestorByClassName(
+												containerNode,
+												TREE_LIST_CLASS_NAME);
+	treeWrap			= DomUtils.getFirstAncestorByClassName(
+												containerNode,
+												TREE_WRAP_CLASS_NAME);
+	subList				= DomUtils.getFirstChildByTagName(containerNode,"div");
+}
+
+/**
+ *	@return void
+ */
+function _toggleTreeNode() {
+	DomUtils.toggle(subList);
+	DomUtils.toggleClassName(containerNodeLink,"active");
+}
+
+/** @returns void */
+function preloadImages() {
+	var img = new Image();
+	img.src = "/jstree/img/aqua_arrow-down.gif";
+	img.src = "/jstree/img/aqua_arrow-down.png";
+	img.src = "/jstree/img/aqua_arrow-side-active.png";
+	img.src = "/jstree/img/aqua_arrow-side-active.gif";
+	img.src = "/jstree/img/aqua_arrow-down-active.png";
+	img.src = "/jstree/img/aqua_arrow-down-active.gif";
+}
+preloadImages();
+
+</script>
+</head>
+<body>
+
+<div class="tree-wrap">
+	<div class="tree-header">
+		Photo Albums
+	</div>
+	<div class="ul tree-list">
+		<div class="li container-item"><a class="container-link" href="#" onclick="treeContainerNodeClicked(event); return false;">Family</a>
+			<div class="ul" style="display:none;">
+				<div class="li container-item"><a class="container-link" href="#" onclick="treeContainerNodeClicked(event); return false;">Mom's side</a>
+					<div class="ul" style="display:none;">
+						<div class="li container-item"><a class="container-link" href="#" onclick="treeContainerNodeClicked(event); return false;">Ohio</a>
+							<div class="ul" style="display:none;">
+								<div class="li"><a href="#">Akron</a></div>
+								<div class="li"><a href="#">Apple Creek</a></div>
+								<div class="li"><a href="#">Barberton</a></div>
+							</div>
+						</div>
+						<div class="li"><a href="#">Alabama</a></div>
+						<div class="li"><a href="#">California</a></div>
+					</div>
+				</div>
+				<div class="li container-item"><a class="container-link" href="#" onclick="treeContainerNodeClicked(event); return false;">Dad's side</a>
+					<div class="ul" style="display:none;">
+						<div class="li container-item"><a class="container-link" href="#" onclick="treeContainerNodeClicked(event); return false;">New York</a>
+							<div class="ul" style="display:none;">
+								<div class="li"><a href="#">Manhatton</a></div>
+								<div class="li"><a href="#">Rochester</a></div>
+								<div class="li"><a href="#">Buffalo</a></div>
+							</div>
+						</div>
+						<div class="li"><a href="#">Ohio</a></div>
+						<div class="li"><a href="#">Florida</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="li container-item"><a class="container-link" href="#" onclick="treeContainerNodeClicked(event); return false;">Summer Vacation</a>
+			<div class="ul" style="display:none;">
+				<div class="li"><a href="#">Bermuda</a></div>
+				<div class="li"><a href="#">Bahama</a></div>
+				<div class="li"><a href="#">Aruba</a></div>
+				<div class="li"><a href="#">Papa New Guinea</a></div>
+			</div>
+		</div>
+		<div class="li container-item"><a class="container-link" href="#" onclick="treeContainerNodeClicked(event); return false;">Winter Vacation</a>
+			<div class="ul" style="display:none;">
+				<div class="li"><a href="#">Djibouti</a></div>
+				<div class="li"><a href="#">New Dehli</a></div>
+				<div class="li"><a href="#">Siberia</a></div>
+			</div>
+		</div>
+		<div class="li container-item"><a class="container-link" href="#" onclick="treeContainerNodeClicked(event); return false;">Home</a>
+			<div class="ul" style="display:none;">
+				<div class="li"><a href="#">Garden</a></div>
+				<div class="li"><a href="#">Back Yard</a></div>
+				<div class="li"><a href="#">Front Yard</a></div>
+			</div>
+		</div>
+		<div class="li"><a class="last" href="#">Miscellaneous</a></div>
+	</div>
+</div>
+
+<div id="canvas">
+	<img src="" alt=""/>
+	<img src="" alt=""/>
+	<img src="" alt=""/>
+</div>
+
+</body>
+</html>

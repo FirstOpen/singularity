@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* this is the key! */
+}
+
+.mainPane {
+    margin-left: 190px;
+    margin-right: 190px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #333;
+    background-color: #FFFFFF;
+}
+
+.top {
+    background-color: #9999FF;
+}
+
+.logo {
+    width: auto;
+    min-width: 790px;
+    background-color: #9999FF;
+}
+
+.pragmatic {
+    color: #66CC33;
+    font-weight: 700;
+    font-size: 28px;
+    font-family: Georgia, Verdana, Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding-top: 10px;
+    margin-left: 20px;
+}
+
+.pragmatic a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.objects {
+    color: #FF9933;
+    font-weight: 700;
+    font-size: 28px;
+    font-family: Georgia, Verdana, Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.objects a {
+    color: #FFFF99;
+    text-decoration: none;
+}
+
+.slogan {
+    color: #003399;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: Georgia, Tahoma, Verdana, Arial, sans-serif;
+    text-align: left;
+    margin-left: 20px;
+}
+
+#navcontainer ul {
+    padding-left: 0;
+    padding-top: 0;
+    margin-left: 0;
+    margin-top: 50px;
+    background-color: #9999FF;
+    color: White;
+    float: right;
+    width: 100%;
+    font-size: 13px;
+    font-family: Georgia, Tahoma, Verdana, Arial, sans-serif;
+}
+
+#navcontainer ul li {
+    display: inline;
+}
+
+#navcontainer ul li a {
+    padding: 0.2em 1em;
+    background-color: #036;
+    color: White;
+    text-decoration: none;
+    float: right;
+    border-right: 1px solid #fff;
+}
+
+#navcontainer ul li a:hover {
+    background-color: #369;
+    color: #FFFF99;
+}
