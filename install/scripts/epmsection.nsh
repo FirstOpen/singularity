@@ -60,22 +60,22 @@ Section  "Event Process Manager" SECEPM
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "EPMAppSvrUninstallString" "$APPSVRDIR"
 
   ;modify configyuration files
-  ${AdvReplaceInFile}  "<appsvr_home>"  "$APPSVRDIR"         all all "$EPMINSTDIR\conf\wrapper.conf"
-  ${AdvReplaceInFile}  "<servername>"   "$APPSVRNAME"        all all "$EPMINSTDIR\conf\wrapper.conf"
-  ${AdvReplaceInFile}  "<wrapper_jar>"  "wrapper-3.1.2.jar"  all all "$EPMINSTDIR\conf\wrapper.conf"
+  !insertmacro AdvReplaceInFile  "<appsvr_home>"  "$APPSVRDIR"         all all "$EPMINSTDIR\conf\wrapper.conf"
+  !insertmacro AdvReplaceInFile   "<servername>"   "$APPSVRNAME"        all all "$EPMINSTDIR\conf\wrapper.conf"
+  !insertmacro AdvReplaceInFile  "<wrapper_jar>"  "wrapper-3.1.2.jar"  all all "$EPMINSTDIR\conf\wrapper.conf"
 
-  ${AdvReplaceInFile}  "<hostname>"  "$hostname" all all "$EPMINSTDIR\deploy\singularity-mysql-ds.xml"
-  ${AdvReplaceInFile}  "<port>"      "$port"     all all "$EPMINSTDIR\deploy\singularity-mysql-ds.xml"
-  ${AdvReplaceInFile}  "<database>"  "$database" all all "$EPMINSTDIR\deploy\singularity-mysql-ds.xml"
-  ${AdvReplaceInFile}  "<username>"  "$username" all all "$EPMINSTDIR\deploy\singularity-mysql-ds.xml"
-  ${AdvReplaceInFile}  "<pass-word>" "$password" all all "$EPMINSTDIR\deploy\singularity-mysql-ds.xml"
+  !insertmacro AdvReplaceInFile   "<hostname>"  "$hostname" all all "$EPMINSTDIR\deploy\singularity-mysql-ds.xml"
+  !insertmacro AdvReplaceInFile  "<port>"      "$port"     all all "$EPMINSTDIR\deploy\singularity-mysql-ds.xml"
+  !insertmacro AdvReplaceInFile   "<database>"  "$database" all all "$EPMINSTDIR\deploy\singularity-mysql-ds.xml"
+  !insertmacro AdvReplaceInFile   "<username>"  "$username" all all "$EPMINSTDIR\deploy\singularity-mysql-ds.xml"
+  !insertmacro AdvReplaceInFile   "<pass-word>" "$password" all all "$EPMINSTDIR\deploy\singularity-mysql-ds.xml"
 
 
    ;Install the Service
    nsExec::Exec  '"$EPMINSTDIR\bin\wrapper.exe" -i "$EPMINSTDIR\conf\wrapper.conf"'
    
    ;Write out Environment Variable
-   !insertmacro WRITE_ENV_STR "JBOSS_HOME" "$APPSVRDIR"
+!insertmacro WRITE_ENV_STR "JBOSS_HOME" "$APPSVRDIR"
    
 SectionEnd
 

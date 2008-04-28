@@ -33,11 +33,11 @@ Section  "Emulator" SECEM
   ;rewite config files
 
    ;modify configyuration files
-  ${AdvReplaceInFile} "wrapper.conf" "awwrapper.conf" all all "$EMINSTDIR\bin\TestAWEmulator.cmd"
-  ${AdvReplaceInFile} "wrapper.conf" "ipwrapper.conf" all all "$EMINSTDIR\bin\TestIPEmulator.cmd"
-  ${AdvReplaceInFile} "service.conf" "ipservice.conf" all all "$EMINSTDIR\bin\StartIPEmulator.cmd"
-  ${AdvReplaceInFile} "service.conf" "awservice.conf" all all "$EMINSTDIR\bin\StartAWEmulator.cmd"
-  ${AdvReplaceInFile} "<codebase>"   "$codebase"      all all "$EMINSTDIR\bin\Common.cmd"
+  !insertmacro AdvReplaceInFile "wrapper.conf" "awwrapper.conf" all all "$EMINSTDIR\bin\TestAWEmulator.cmd"
+  !insertmacro AdvReplaceInFile "wrapper.conf" "ipwrapper.conf" all all "$EMINSTDIR\bin\TestIPEmulator.cmd"
+  !insertmacro AdvReplaceInFile "service.conf" "ipservice.conf" all all "$EMINSTDIR\bin\StartIPEmulator.cmd"
+  !insertmacro AdvReplaceInFile "service.conf" "awservice.conf" all all "$EMINSTDIR\bin\StartAWEmulator.cmd"
+  !insertmacro AdvReplaceInFile "<codebase>"   "$codebase"      all all "$EMINSTDIR\bin\Common.cmd"
   
   ; Shortcuts
   SetOutPath "$EMINSTDIR\bin"
