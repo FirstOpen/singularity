@@ -1,0 +1,1 @@
+Binary Distribution of nsis-2.36, unmodified. Obtained from http://nsis.sourceforge.net/Main_Page
