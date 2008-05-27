@@ -4,7 +4,7 @@
 !define PRODUCT_PUBLISHER "i-Konect LLC"
 !define PRODUCT_WEB_SITE "http://singularity.firstopen.org"
 !define PRODUCT_NAME "Singularity"
-!define PRODUCT_VERSION "1.0-M3"
+!define PRODUCT_VERSION "1.0-M2A"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\wrapper.exe"
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
@@ -44,7 +44,7 @@ XPStyle on
  !define MUI_UNICON "UnSingularityInstall.ico"
  !define MUI_DEVICON "${NSISDIR}\Contrib\Graphics\Icons\device.ico"
 
-BrandingText "i-Konect - Singularity 1.0-M3"
+BrandingText "i-Konect - Singularity 1.0-M2A"
 
 
 ; Welcome page
