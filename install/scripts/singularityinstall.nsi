@@ -2,13 +2,13 @@
 ;!include "debugger.nsh"
 
 !define PRODUCT_PUBLISHER "i-Konect LLC"
-!define PRODUCT_WEB_SITE "http://www.i-konect.com/singularity"
+!define PRODUCT_WEB_SITE "http://singularity.firstopen.org"
 !define PRODUCT_NAME "Singularity"
-!define PRODUCT_VERSION "1.0-M2"
+!define PRODUCT_VERSION "1.0-M3"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\wrapper.exe"
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
-OutFile "..\Setup.exe"
+OutFile "..\SingularitySetup.exe"
 InstallDir "$PROGRAMFILES\${PRODUCT_NAME}\${PRODUCT_VERSION}"
 InstallDirRegKey HKLM "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails hide
@@ -44,7 +44,7 @@ XPStyle on
  !define MUI_UNICON "UnSingularityInstall.ico"
  !define MUI_DEVICON "${NSISDIR}\Contrib\Graphics\Icons\device.ico"
 
-BrandingText "i-Konect - Singularity 1.0-M2"
+BrandingText "i-Konect - Singularity 1.0-M3"
 
 
 ; Welcome page
@@ -98,8 +98,8 @@ var ICONS_GROUP
 ;!define MUI_FINISHPAGE_RUN
 ;!define MUI_FINISHPAGE_RUN_FUNCTION FinishInstall
 ;!define MUI_FINISHPAGE_RUN_TEXT "Services"
-!define MUI_FINISHPAGE_LINK "singularity.i-konect.com"
-!define MUI_FINISHPAGE_LINK_LOCATION "http://singularity.i-konect.com"
+!define MUI_FINISHPAGE_LINK "singularity.firstopen.org"
+!define MUI_FINISHPAGE_LINK_LOCATION "http://singularity.firstopen.org"
 !insertmacro MUI_PAGE_FINISH
 
 ;------------------ End Install Pages ----------------
@@ -269,10 +269,12 @@ Function .onInit
 
   Call GetJREVersion
   Pop $R0
-  StrCmp $R0 "1.5" +3
+  StrCmp $R0 "1.5" ok
+  StrCmp $R0 "1.6" ok
+  StrCmp $R0 "1.7" ok
   Messagebox MB_OK|MB_IcONEXCLAMATION "Java $R0 found, need JDK 1.5"
   Abort
-
+  ok:
    Call CheckJavaHome
 FunctionEnd
 ;------------- End Global Functions -------------------

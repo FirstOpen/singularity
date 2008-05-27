@@ -63,11 +63,11 @@ Section  "Config Manager" SECCM
 
 
   ;modify configuration files
-  ${AdvReplaceInFile} "<codebase>" "$codebase" all all "$CMINSTDIR\conf\wrapper.conf"
-  ${AdvReplaceInFile} "<epmhost>"  "$epmhost"  all all "$CMINSTDIR\conf\id.properties"
+  !insertmacro AdvReplaceInFile "<codebase>" "$codebase" all all "$CMINSTDIR\conf\wrapper.conf"
+  !insertmacro AdvReplaceInFile "<epmhost>"  "$epmhost"  all all "$CMINSTDIR\conf\id.properties"
   
   ;set the hostname for codebase server
-  ${AdvReplaceInFile} "<codebase>" "$codebase" all all "$CMINSTDIR\bin\common.cmd"
+  !insertmacro AdvReplaceInFile "<codebase>" "$codebase" all all "$CMINSTDIR\bin\common.cmd"
 
   ;Install the Service
    nsExec::Exec  '"$CMINSTDIR\bin\wrapper.exe" -i "$CMINSTDIR\conf\wrapper.conf"'

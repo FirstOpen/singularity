@@ -54,10 +54,10 @@ Section  "Device Manager" SECDM
 
 
   ;Modify configuration files
-  ${AdvReplaceInFile} "<id>" "$id" all all "$DMINSTDIR\conf\id.properties"
-  ${AdvReplaceInFile} "<geocoord>" "$geocoord" all all "$DMINSTDIR\conf\id.properties"
-  ${AdvReplaceInFile} "<codebase>" "$codebase" all all "$DMINSTDIR\conf\wrapper.conf"
-  ${AdvReplaceInFile} "<codebase>" "$codebase" all all "$DMINSTDIR\bin\Common.cmd"
+  !insertmacro AdvReplaceInFile "<id>" "$id" all all "$DMINSTDIR\conf\id.properties"
+  !insertmacro AdvReplaceInFile "<geocoord>" "$geocoord" all all "$DMINSTDIR\conf\id.properties"
+  !insertmacro AdvReplaceInFile "<codebase>" "$codebase" all all "$DMINSTDIR\conf\wrapper.conf"
+  !insertmacro AdvReplaceInFile "<codebase>" "$codebase" all all "$DMINSTDIR\bin\Common.cmd"
 
   ;Install the Service
    nsExec::Exec  '"$DMINSTDIR\bin\wrapper.exe" -i "$DMINSTDIR\conf\wrapper.conf"'
