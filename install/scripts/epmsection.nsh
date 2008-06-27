@@ -60,12 +60,12 @@ Section  "Event Process Manager" SECEPM
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "EPMAppSvrUninstallString" "$APPSVRDIR"
 
   ;modify configyuration files
-  !insertmacro AdvReplaceInFile  "<appsvr_home>"  "$APPSVRDIR"         all all "$EPMINSTDIR\conf\wrapper.conf"
+  !insertmacro AdvReplaceInFile   "<appsvr_home>"  "$APPSVRDIR"         all all "$EPMINSTDIR\conf\wrapper.conf"
   !insertmacro AdvReplaceInFile   "<servername>"   "$APPSVRNAME"        all all "$EPMINSTDIR\conf\wrapper.conf"
-  !insertmacro AdvReplaceInFile  "<wrapper_jar>"  "wrapper-3.1.2.jar"  all all "$EPMINSTDIR\conf\wrapper.conf"
+  !insertmacro AdvReplaceInFile   "<wrapper_jar>"  "wrapper-3.1.2.jar"  all all "$EPMINSTDIR\conf\wrapper.conf"
 
   !insertmacro AdvReplaceInFile   "<hostname>"  "$hostname" all all "$EPMINSTDIR\deploy\singularity-mysql-ds.xml"
-  !insertmacro AdvReplaceInFile  "<port>"      "$port"     all all "$EPMINSTDIR\deploy\singularity-mysql-ds.xml"
+  !insertmacro AdvReplaceInFile   "<port>"      "$port"     all all "$EPMINSTDIR\deploy\singularity-mysql-ds.xml"
   !insertmacro AdvReplaceInFile   "<database>"  "$database" all all "$EPMINSTDIR\deploy\singularity-mysql-ds.xml"
   !insertmacro AdvReplaceInFile   "<username>"  "$username" all all "$EPMINSTDIR\deploy\singularity-mysql-ds.xml"
   !insertmacro AdvReplaceInFile   "<pass-word>" "$password" all all "$EPMINSTDIR\deploy\singularity-mysql-ds.xml"

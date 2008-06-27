@@ -15,8 +15,8 @@
 	</organization>
 	<url>http://www.i-konect.com/singularity/</url>
 	<issueTrackingUrl>http://singularity.firstopen.org/jira</issueTrackingUrl>
-	<siteAddress>http://www.i-konect.com/singularity/</siteAddress>
-	<siteDirectory/>
+	<siteAddress>http://www.i-konect.com</siteAddress>
+	<siteDirectory>singularity</siteDirectory>
 	<distributionDirectory>/singularity/dist/${pom.artifactId}/</distributionDirectory>
 	<repository>
 		<connection>scm:svn:http://www.firstopen.org/svn/singularity</connection>
