@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>singularity</groupId>
+  <artifactId>singularity-parent</artifactId>
+  <name>Singularity Project</name>
+  <version>1.0-MAIN</version>
+<packaging>pom</packaging>
+  <url>http://www.i-konect.com/singularity/</url>
+  <issueManagement>
+    <url>http://singularity.firstopen.org/jira</url>
+  </issueManagement>
+  <inceptionYear>2004</inceptionYear>
+  <developers>
+    <developer>
+      <id>TomRose</id>
+      <name>Tom Rose</name>
+      <email>tom.rose@i-konect.com</email>
+      <url>http://www.i-konect.com</url>
+      <roles>
+        <role>Lead Developer</role>
+        <role>Lead Architect</role>
+      </roles>
+      <timezone>-5</timezone>
+    </developer>
+  </developers>
+  <contributors>
+    <contributor />
+  </contributors>
+  <scm>
+    <connection>scm:svn:http://www.firstopen.org/svn/singularity</connection>
+
+    <developerConnection>scm:svn:http://www.firstopen.org/svn/singularity</developerConnection>
+    <url>http://www.firstopen.org/svn/singularity</url>
+  </scm>
+  <organization>
+    <name>i-konect.com</name>
+    <url>http://www.i-konect.com</url>
+  </organization>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <testSourceDirectory>test</testSourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>1.0-beta-1</version>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>publicobject</groupId>
+      <artifactId>declawer</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <reporting>
+    <plugins>
+      <plugin>
+        <artifactId>maven-changes-plugin</artifactId>
+        <configuration>
+          <xmlPath>${basedir}/xdocs/changes.xml</xmlPath>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-dashboard-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-multichanges-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </reporting>
+  <distributionManagement>
+    <repository>
+      <id>default</id>
+      <name>Default Repository</name>
+      <url>file:///singularity/dist/${pom.artifactId}/</url>
+    </repository>
+    <site>
+      <id>default</id>
+      <name>Default Site</name>
+      <url>scp://http://www.i-konect.com/singularity</url>
+    </site>
+  </distributionManagement>
+<repositories>
+ 
+  <repository>
+    <id>ibiblio</id>
+    <name>ibiblio</name>
+    <url>http://www.ibiblio.org/maven</url>
+  </repository>
+
+  <repository>
+    <id>codehaus</id>
+    <name>codehaus</name>
+    <url>http://dist.codehaus.org</url>
+  </repository>
+
+ <repository>
+    <id>FirstOpenRepo</id>
+    <name>First Open Repo</name>
+    <url>http://maven-proxy.firstopen.org/repository</url>
+  </repository>
+
+</repositories>
+</project>
