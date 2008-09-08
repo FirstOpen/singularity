@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <parent>
+        <groupId>singularity</groupId>
+        <artifactId>singularity-parent</artifactId>
+        <version>1.0-MAIN</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>singularity</groupId>
+    <artifactId>singularity-epc</artifactId>
+    <name>Singularity EPC</name>
+    <description>Singularity EPC</description>
+    <developers>
+        <developer>
+            <id>mmealling</id>
+            <name>Michael Mealling</name>
+            <email>info@refactored-networks.com</email>
+            <url>http://www.refactored-networks.com</url>
+            <roles>
+                <role>Lead Developer</role>
+            </roles>
+            <timezone>-5</timezone>
+        </developer>
+    </developers>
+    <contributors>
+        <contributor>
+            <name>Tom Rose</name>
+            <email>tom.rose@i-konect.com</email>
+            <url>http://www.i-konect.com</url>
+            <roles>
+                <role>Lead Developer</role>
+                <role>Lead Architect</role>
+            </roles>
+            <timezone>-5</timezone>
+        </contributor>
+    </contributors>
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <testSourceDirectory>test</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5 </source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <reporting>
+        <plugins>
+            <plugin>
+                <artifactId>maven-changes-plugin</artifactId>
+                <configuration>
+                    <xmlPath>${basedir}/xdocs/changes.xml</xmlPath>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <configuration>
+                    <configLocation>${basedir}/../../sun_checks.xml</configLocation>
+                    <headerLocation>${basedir}/../../javaHeader.txt</headerLocation>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jxr-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-pmd-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jdepend-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </reporting>
+</project>
