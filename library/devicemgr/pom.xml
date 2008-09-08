@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-<parent>
-  <groupId>singularity</groupId>
-  <artifactId>singularity-parent</artifactId>
-  <version>1.0-MAIN</version> 
-  <relativePath>../../pom.xml</relativePath>
-
-</parent>
-
+  <parent>
+        <groupId>singularity</groupId>
+        <artifactId>singularity-parent</artifactId>
+        <version>1.0-MAIN</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>singularity-devicemgr</groupId>
   <artifactId>singularity-devicemgr</artifactId>
@@ -169,17 +167,17 @@
     <dependency>
       <groupId>singularity</groupId>
       <artifactId>singularity-util</artifactId>
-      <version>${pom.currentVersion}</version>
+      <version>${pom.version}</version>
     </dependency>
     <dependency>
       <groupId>singularity</groupId>
       <artifactId>singularity-system</artifactId>
-      <version>${pom.currentVersion}</version>
+      <version>${pom.version}</version>
     </dependency>
     <dependency>
       <groupId>singularity</groupId>
       <artifactId>singularity-config</artifactId>
-      <version>${pom.currentVersion}</version>
+      <version>${pom.version}</version>
     </dependency>
     <dependency>
       <groupId>concurrent</groupId>
@@ -267,22 +265,4 @@
       </plugin>
     </plugins>
   </reporting>
-<profiles>
-    <profile>
-      <id>normal</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-<properties>
-        <org.jboss.version>4.0.3SP1</org.jboss.version>
-<org.hibernate.version>3.1</org.hibernate.version>
-
-<org.apache.jakarta.log4j.version>1.2.9</org.apache.jakarta.log4j.version>
-
-      </properties>
-  
-    </profile>
-  </profiles>
-
-
 </project>
