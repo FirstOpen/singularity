@@ -15,11 +15,7 @@
     <module>library/security</module>
     <module>library/epc</module>
     <module>library/devicemgr</module>
-
-   
     <module>component/config</module>
-    
-
   </modules>
     <url>http://www.i-konect.com/singularity/</url>
     <issueManagement>
@@ -43,9 +39,9 @@
         <contributor />
     </contributors>
     <scm>
-        <connection>scm:svn:http://www.firstopen.org/svn/singularity</connection>
-        <developerConnection>scm:svn:http://www.firstopen.org/svn/singularity</developerConnection>
-        <url>http://www.firstopen.org/svn/singularity</url>
+        <connection>scm:svn:https://singularity.svn.sourceforge.net/svnroot/singularity/branches/v1.0M3</connection>
+        <developerConnection>scm:svn:https://singularity.svn.sourceforge.net/svnroot/singularity/branches/v1.0M3</developerConnection>
+        <url>https://singularity.svn.sourceforge.net/svnroot/singularity/branches/v1.0M3</url>
     </scm>
     <organization>
         <name>i-konect.com</name>
@@ -90,11 +86,12 @@
             <artifactId>declawer</artifactId>
             <version>1.0</version>
         </dependency>
+
+
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.2</version>
-            <scope>test</scope>
+            <groupId>stax</groupId>
+            <artifactId>stax</artifactId>
+            <version>1.2.0</version>
         </dependency>
     </dependencies>
     <reporting>
@@ -158,7 +155,4 @@
             </properties>
         </profile>
     </profiles>
-    <properties>
-        <netbeans.hint.useExternalMaven>true</netbeans.hint.useExternalMaven>
-    </properties>
-</project>
+   </project>
