@@ -43,7 +43,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>xmlbeans-maven-plugin</artifactId>
-                <executions>
+   <executions>
                     <execution>
                         <goals>
                             <goal>xmlbeans</goal>
@@ -63,6 +63,17 @@
             <artifactId>junit</artifactId>
             <version>3.8.2</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.2</version>
+            <scope>test</scope>
+        </dependency>
+      <dependency>
+            <groupId>xmlbeans</groupId>
+            <artifactId>xmlbeans</artifactId>
+            <version>2.3.0</version>
         </dependency>
     </dependencies>
     <reporting>
