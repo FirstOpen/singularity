@@ -43,21 +43,12 @@
         </plugins>
     </build>
     <dependencies>
-        <dependency>
-            <groupId>jboss</groupId>
-            <artifactId>jboss-common</artifactId>
-            <version>${org.jboss.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>jboss</groupId>
-            <artifactId>jboss-j2ee</artifactId>
-            <version>${org.jboss.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>jboss</groupId>
-            <artifactId>jboss-jsr77-client</artifactId>
-            <version>${org.jboss.version}</version>
-        </dependency>
+ <dependency>
+	    <groupId>javaee</groupId>
+	    <artifactId>javaee-api</artifactId>
+	    <version>5</version>
+	    <scope>provided</scope>
+</dependency>
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
@@ -73,11 +64,24 @@
             <artifactId>commons-httpclient</artifactId>
             <version>2.0</version>
         </dependency>
-        <dependency>
-            <groupId>hibernate</groupId>
-            <artifactId>hibernate</artifactId>
-            <version>${org.hibernate.version}</version>
-        </dependency>
+
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>3.3.2.GA</version>
+    <type>pom</type>
+    <!--hibernate-dependencies is a pom, not needed for hibernate-core-->
+  </dependency>
+  <dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-annotations</artifactId>
+    <version>3.4.0.GA</version>
+  </dependency>
+  <dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <version>3.1.0.GA</version>
+  </dependency>
         <dependency>
             <groupId>xerces</groupId>
             <artifactId>xercesImpl</artifactId>
