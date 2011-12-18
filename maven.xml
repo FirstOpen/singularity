@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<project    xmlns:j="jelly:core"
+            xmlns:maven="jelly:maven">
+
+  
+
+    <goal name="singularity:dist" description="builds and deploys Singularity">
+	  <maven:reactor  basedir="${basedir}"
+                        includes="${maven.multiproject.includes}"
+                        goals="singularity:dist"
+                        banner="Building Singularity  --- "
+                        ignoreFailures="false"/>
+    </goal>
+
+    
+    <goal name="singularity:schemaexport" description="generate schema MySQL 4.x DDL only, no build">
+        <maven:reactor  basedir="${basedir}"
+                        includes="${maven.multiproject.includes}"
+                        goals="singularity:schemaexport"
+                        banner="Building Singularity  Schemas --- "
+                        ignoreFailures="true"/>
+    </goal>
+
+    <goal name="singularity:eclipse" description="generate all eclipse project/classpath files">
+        <maven:reactor  basedir="${basedir}"
+                        includes="${maven.multiproject.includes}"
+                        goals="eclipse"
+                        banner="Building Singularity Eclipse files --- "
+                        ignoreFailures="false"/>
+    </goal>
+
+
+    <goal name="singularity:all" description="clean,dist,schemaexport">
+      <attainGoal name="singularity:clean" />
+      <attainGoal name="singularity:dist" />
+   	<attainGoal name="singularity:schemaexport" />
+  </goal>
+
+    <goal name="singularity:release" description="same as dist for now">
+        <maven:reactor  basedir="${basedir}"
+                        includes="${maven.multiproject.includes}"
+                        goals="dist"
+                        banner="Building Singularity  Distribution --- "
+                        ignoreFailures="true"/>
+    </goal>
+
+
+    <goal name="singularity:clean" description="multiproject clean">
+        <maven:reactor  basedir="${basedir}"
+                        includes="${maven.multiproject.includes}"
+                        goals="clean"
+                        banner="Cleaning Singularity  Distribution --- "
+                        ignoreFailures="true"/>
+    </goal>
+
+     <goal name="singularity:declaw" description="multiproject Java 1.4 source generation">
+        <mkdir dir="${basedir}/java-1.4/src" />
+        <maven:reactor  basedir="${basedir}"
+ 				includes="${maven.multiproject.includes}"
+                        goals="singularity:java-1.4"
+                        banner="Generation Java 1.4 compatible source code --- "
+                        ignoreFailures="true"/>
+    </goal>
+
+    <goal name="singularity:java-1.4">
+        <property name="org.firstopen.singularity.dependency.classpath" refid="maven.dependency.classpath"/>
+        <maven:makeRelativePath  var="org.firstopen.singularity.rootrelbase"                                  basedir="${maven.multiproject.basedir}/../../" path="${basedir}" />
+        <java classname="com.publicobject.declawer.Declawer" classpathref="maven.dependency.classpath" >
+            <arg value="${org.firstopen.singularity.rootrelbase}/src" />
+            <arg value="${maven.build.dest}${path.separator}${org.firstopen.singularity.dependency.classpath}" />
+            <arg value="java-1.4/src" />
+        </java>    
+    </goal>
+    
+</project>

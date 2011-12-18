@@ -1,0 +1,26 @@
+<server>
+    <mbean code="org.hibernate.jmx.HibernateService" name="jboss.jca:service=AdminHibernateFactory, name=AdminHibernateFactory">
+            <depends>jboss.jca:service=RARDeployer</depends>
+            <depends>jboss.jca:service=LocalTxCM,name=mysqlDBPool</depends>
+            <depends>jboss:service=TransactionManager</depends>
+        
+            <attribute name="JndiName">java:/hibernate/SessionFactory</attribute>
+            <attribute name="Datasource">java:/mysqlDBPool</attribute>
+            <attribute name="Dialect">org.hibernate.dialect.MySQLInnoDBDialect</attribute>
+            <attribute name="TransactionStrategy">org.hibernate.transaction.JTATransactionFactory</attribute>
+            <attribute name="TransactionManagerLookupStrategy">
+                org.hibernate.transaction.JBossTransactionManagerLookup
+            </attribute>
+        <attribute name="FlushBeforeCompletionEnabled">true</attribute>
+        <attribute name="AutoCloseSessionEnabled">true</attribute>
+        <attribute name="MaximumFetchDepth">5</attribute>
+        <attribute name="SecondLevelCacheEnabled">true</attribute>
+        <attribute name="CacheProviderClass">org.hibernate.cache.EhCacheProvider</attribute>
+        <attribute name="QueryCacheEnabled">true</attribute>
+        <attribute name="ShowSqlEnabled">false</attribute>
+        <attribute name="MapResources">
+            org/firstopen/custom/business/CarterNote.hbm.xml,
+            org/firstopen/custom/business/EventRecord.hbm.xml,
+       </attribute>
+    </mbean>
+</server>

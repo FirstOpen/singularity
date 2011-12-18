@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+<faqs title="Frequently Asked Questions">
+
+	<part id="Getting Started">
+		<title>Getting Started</title>
+
+		<faq id="Maven Version">
+			<question>What do I use to build the Singularity EAR?</question>
+			<answer>
+				<p>You use Apache Maven 1.1
+            It can be found at 
+            <a href="http://maven.apache.org/"></a>
+</p>
+			</answer>
+		</faq>
+
+		<faq id="BuildingEAR">
+			<question>How do I Build the Singularity?</question>
+			<answer>
+				<p>From the root project directory run
+				 Maven
+				 
+				 This will run the default goal which will build all the supporting 
+				 artifacts and the final EAR
+				
+				</p>
+			</answer>
+		</faq>
+
+	</part>
+
+</faqs>

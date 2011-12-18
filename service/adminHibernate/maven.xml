@@ -1,0 +1,201 @@
+<project xmlns:artifact="artifact"
+     xmlns:maven="jelly:maven"
+     xmlns:util="jelly:util"
+     xmlns:j="jelly:core"
+     xmlns:ant="jelly:ant" 
+     xmlns:license="license">
+
+    <goal name="singularity:dist" >
+        <echo>Final Name is ${maven.jar.final.name} ...</echo>
+        <attainGoal name="jar:install" />
+        <attainGoal name="singularity:jar" />
+        <echo>Generating Schema for ${maven.jar.final.name} ...</echo>
+        <echo>Final Name is ${maven.jar.final.name} ...</echo>
+        <artifact:install artifact="${maven.build.dir}/${maven.jar.final.name}" type="sar" project="${pom}" />
+    </goal>
+
+    <goal name="singularity:schemaexport">
+        <taskdef name="schemaexport" classname="org.hibernate.tool.hbm2ddl.SchemaExportTask" classpathref="maven.dependency.classpath" />
+        <schemaexport properties="descriptors/hibernate.properties" quiet="no" text="yes" drop="no" delimiter=";" output="${singularity.deploy.dir}/singularity_admin_mysql.sql">
+            <fileset dir="${basedir}/../..">
+                <include name="component/admin/target/classes/org/firstopen/**/*.hbm.xml" />
+            </fileset>
+        </schemaexport>
+    </goal>
+  <!-- ================================================================== -->
+  <!-- J A R Fix                                                              -->
+  <!-- ================================================================== -->
+  <goal name="singularity:jar"
+        description="Create the deliverable jar file.">
+
+    <j:choose>
+      <j:when test="${pom.currentVersion == null}">
+        <ant:fail>You must define currentVersion in your POM.</ant:fail>
+      </j:when>
+    </j:choose>
+    
+    <ant:available property="maven.jar.manifest.available" 
+      file="${maven.jar.manifest}"/>
+
+    <j:set var="specificationTitle" value="${pom.shortDescription.trim()}"/>
+    <j:if test="${specificationTitle.length() gt 49}">
+      <ant:echo>Warning: shortDescription is greater than 49 characters - trimming for specification title.</ant:echo>
+      <j:set var="specificationTitle" value="${specificationTitle.substring(0,46)}..."/>
+    </j:if>
+
+    <!-- See http://java.sun.com/j2se/1.3/docs/guide/jar/jar.html -->
+    <!-- See http://java.sun.com/j2se/1.4.1/docs/guide/jar/jar.html -->
+    <ant:jar
+      jarfile="${maven.build.dir}/${maven.jar.final.name}"
+      basedir="${maven.build.dest}"
+      index="${maven.jar.index}"
+      compress="${maven.jar.compress}"
+      excludes="${maven.jar.excludes}"> 
+      
+      <j:if test="${maven.jar.manifest.available}">
+        <ant:setProperty name="manifest" value="${maven.jar.manifest}" />
+      </j:if>
+
+      <j:if test="${context.getVariable('maven.jar.includes') != null}">
+        <ant:setProperty name="includes" value="${maven.jar.includes}" />
+      </j:if>
+
+      <j:set var="licenseFileName"><license:fileName/></j:set>
+      <util:file name="${licenseFileName}" var="licenseFile"/>
+      <ant:metainf dir="${licenseFile.canonicalFile.parent}">
+        <ant:include name="${licenseFile.canonicalFile.name}"/>
+      </ant:metainf>
+      <ant:manifest>
+        <ant:attribute name="Built-By" value="${user.name}"/>
+        <ant:attribute name="Created-By" value="Apache Maven"/>
+        <ant:attribute name="Package" value="${pom.package}"/>
+        <ant:attribute name="Build-Jdk" value="${java.version}"/>
+
+        <j:set var="jarClasspath" value="${maven.jar.manifest.classpath.add}"/>
+        <j:if test="${jarClasspath}">
+            <j:forEach var="dep" items="${pom.dependencies}">
+                <j:if test="${dep.getProperty('jar.manifest.classpath')=='true'}">
+                <j:if test="${dep.getProperty('jar.manifest.classpath.dir') != null}">
+                               <j:set var="maven.jar.classpath" value="${maven.jar.classpath} ${dep.getProperty('jar.manifest.classpath.dir')}/${dep.artifact}" /> 
+                            </j:if>
+                <j:if test="${dep.getProperty('jar.manifest.classpath.dir') == null}">
+                               <j:set var="maven.jar.classpath" value="${maven.jar.classpath} ${dep.artifact}" /> 
+                            </j:if>
+                </j:if>
+            </j:forEach>
+            <j:if test="${maven.jar.classpath.length() != 0}">
+                <ant:attribute name="Class-Path" value="${maven.jar.classpath}"/>
+            </j:if>
+        </j:if>
+        <!-- added supplementary entries -->
+        <ant:attribute name="Extension-Name" value="${pom.artifactId}"/>
+        <ant:attribute name="Specification-Title" value="${specificationTitle}" />
+        <ant:attribute name="Specification-Vendor" value="${pom.organization.name}"/>
+        <!--
+        <ant:attribute name="Specification-Version" value="${pom.currentVersion}"/>
+        -->
+        <ant:attribute name="Implementation-Title" value="${pom.package}"/>
+        <ant:attribute name="Implementation-Vendor" value="${pom.organization.name}"/>
+        <ant:attribute name="Implementation-Version" value="${pom.currentVersion}"/>
+        <j:set var="mainclass" value="${maven.jar.mainclass}" />
+        <j:if test="${!empty(mainclass)}">
+            <ant:attribute name="Main-Class" value="${mainclass}"/>
+        </j:if>
+        
+        <j:set var="jarExtensions" value="${maven.jar.manifest.extensions.add}"/>
+        <j:if test="${jarExtensions == 'true'}">
+          <j:set var="extensionList" value=""/>
+          <j:forEach var="artifact" items="${pom.artifacts}">
+            <j:set var="dep" value="${artifact.dependency}"/>
+            <j:if test="${dep.type == 'jar' || empty(dep.type)}">
+              <j:set var="extensionList" value="${extensionList} ${dep.artifactId}"/>
+            </j:if>
+          </j:forEach>
+
+          <j:if test="${extensionList.length() != 0}">        
+            <j:set var="extensionList" value="${extensionList.substring(1)}"/>
+            <ant:attribute name="Extension-List" value="${extensionList}"/>
+          </j:if>
+
+          <j:forEach var="artifact" items="${pom.artifacts}">
+            <j:set var="dep" value="${artifact.dependency}"/>
+            <j:if test="${dep.type == 'jar' || empty(dep.type)}">
+              <ant:attribute name="${dep.artifactId}-Extension-Name" value="${dep.artifactId}"/>
+              <ant:attribute name="${dep.artifactId}-Implementation-Version" value="${dep.version}"/>
+              
+              <j:choose>
+                <j:when test="${empty(dep.url) || dep.url.toString().trim().length() == 0}">
+                  <ant:attribute name="${dep.artifactId}-Implementation-URL" value="http://www.ibiblio.org/maven${artifact.urlPath}"/>
+                </j:when>
+                <j:otherwise>
+                  <ant:attribute name="${dep.artifactId}-Implementation-URL" value="${dep.url}"/>
+                </j:otherwise>
+              </j:choose>
+            </j:if>
+          </j:forEach>        
+        </j:if>
+
+        <j:if test="${context.getVariable('maven.jar.manifest.attributes.list') != null}">
+            <util:tokenize var="attributeList" delim="," trim="true">${maven.jar.manifest.attributes.list}</util:tokenize>
+            <j:forEach var="attribute" items="${attributeList}">
+                <j:set var="name" value="maven.jar.manifest.attribute.${attribute}"/>
+                <j:set var="value" value="${context.findVariable(name)}"/>
+                <ant:attribute name="${attribute}" value="${value}"/>
+            </j:forEach>
+        </j:if>
+
+        <j:if test="${context.getVariable('maven.jar.manifest.groups.list') != null}">
+            <util:tokenize var="groupList" delim="," trim="true">${maven.jar.manifest.groups.list}</util:tokenize>
+            <j:forEach var="group" items="${groupList}">
+                <j:set var="nameVar" value="maven.jar.manifest.${group}.name"/>
+                <j:set var="groupName" value="${context.findVariable(nameVar)}"/>
+                <j:set var="attributeListVar" value="maven.jar.manifest.${group}.attributes.list"/>
+                <j:set var="groupAttributes" value="${context.findVariable(attributeListVar)}"/>
+                <util:tokenize var="attributeList" delim="," trim="true">${groupAttributes}</util:tokenize>
+                <ant:section name="${groupName}">
+                    <j:forEach var="attribute" items="${attributeList}">
+                        <j:set var="name" value="maven.jar.manifest.${group}.attribute.${attribute}"/>
+                        <j:set var="value" value="${context.findVariable(name)}"/>
+                        <ant:attribute name="${attribute}" value="${value}"/>
+                    </j:forEach>
+                </ant:section>
+            </j:forEach>
+         </j:if>
+      </ant:manifest>
+    </ant:jar>
+  </goal>
+
+
+    <goal name="singularity:xmlschema" description="Generate the XML Schema with XMLBeans">
+
+        <taskdef name="xmlbean" classname="org.apache.xmlbeans.impl.tool.XMLBean">
+            <classpath>
+                <path refid="maven.dependency.classpath" />
+            </classpath>
+        </taskdef>
+
+        <xmlbean>
+            <ant:setProperty name="schema" value="${basedir}/schemas" />
+            <ant:setProperty name="destfile" value="${basedir}/lib/schemas.jar" />
+            <ant:setProperty name="srcgendir" value="${basedir}/gensrc" />
+            <ant:setProperty name="classgendir" value="${maven.build.dest}" />
+            <ant:setProperty name="classpathref" value="maven.dependency.classpath" />
+            <ant:setProperty name="javasource" value="1.5" />
+            <ant:setProperty name="source" value="1.5" />
+            <ant:setProperty name="debug" value="on" />
+        </xmlbean>
+
+        <delete dir="${maven.build.dest}/schemaorg_apache_xmlbeans" />
+        <ant:delete verbose="false" failonerror="false">
+            <ant:fileset dir="${maven.build.dest}">
+                <ant:include name="*.properties" />
+            </ant:fileset>
+        </ant:delete>
+    </goal>
+
+
+   
+
+
+</project>
+

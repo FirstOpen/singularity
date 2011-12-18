@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Singularity">
+  <title>Singularity</title>
+  <body>
+    <links>
+      <item name="i-Konect"                href="http://www.i-konect.com"/>
+      <item name="FirstOpen"               href="http://www.firstopen.org"/>
+    </links>
+  <search/>
+    <menu name="Overview">
+      <item name="FAQ" href="/faq.html"/>
+    </menu>
+  </body>
+</project>

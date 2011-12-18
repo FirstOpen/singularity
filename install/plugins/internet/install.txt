@@ -1,0 +1,4 @@
+copy Internet.dll to <NSIS Home>\Plugins
+copy Internet.nsh to <NSIS Home>\Include
+
+internet.nsi is the install script to create a Internet.exe to test the install. 

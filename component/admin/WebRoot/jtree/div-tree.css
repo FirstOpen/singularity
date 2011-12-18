@@ -1,0 +1,174 @@
+
+.tree-wrap 	{
+	font: 11px "Lucida Grande",LucidaGrande,verdana,sans-serif;
+	width: 150px;
+}
+
+
+/* don't need this */
+#page #content .tree-wrap br {
+	display:none;
+	border:1px solid lime;
+}
+.tree-wrap {
+	margin-top:8px;
+}
+/* */
+
+.tree-list {
+	height:300px;
+	border-right: 1px solid silver;
+	border-bottom: 1px solid silver;
+	border-left: 1px solid silver;
+	overflow:auto;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+
+.tree-header {
+	color:white;
+	padding-left:2px;
+	padding-bottom:2px;
+	border:1px solid #458cee;
+	background: transparent url(img/aquaHeaderIcon.gif) 0 -5px repeat-x;
+}
+
+.tree-wrap a:link, .tree-wrap a:visited {
+	display: block;
+	height:14px;
+	padding-left: 15px;
+	border-bottom: 1px solid #eee;
+	text-decoration: none;
+	color:gray;
+}
+
+.tree-wrap a.last:link {
+	border-bottom: 0;
+}
+
+.tree-wrap a:hover {
+	color: #458cee;
+	background-color: #f6f6f6;
+}
+
+.tree-wrap a.container-link:link, 
+.tree-wrap a.container-link:visited {
+	background: white url(img/aqua_arrow-side.gif) 1px 2px no-repeat;
+}	
+html>body .tree-wrap a.container-link:link, 
+html>body .tree-wrap a.container-link:visited {
+	background: white url(img/aqua_arrow-side.png) 1px 0 no-repeat;
+}
+
+.tree-wrap a.container-link.active:link, 
+.tree-wrap a.container-link.active:visited {
+	background: white url(img/aqua_arrow-down.gif) 1px 2px no-repeat;
+}
+html>body .tree-wrap a.container-link.active:link, 
+html>body .tree-wrap a.container-link.active:visited {
+	background: white url(img/aqua_arrow-down.png) 1px 0 no-repeat;
+}
+
+.tree-wrap a.container-link:hover {
+	background: #f6f6f6 url(img/aqua_arrow-side.gif) 1px 2px no-repeat;
+}
+html>body .tree-wrap a.container-link:hover {
+	background: #f6f6f6 url(img/aqua_arrow-side.png) 1px 0 no-repeat;
+}
+
+.tree-wrap a.container-link.active:hover {
+	background: #f6f6f6 url(img/aqua_arrow-down.gif) 1px 2px no-repeat;
+}
+html>body .tree-wrap a.container-link.active:hover {
+	background: #f6f6f6 url(img/aqua_arrow-down.png) 1px 0 no-repeat;
+}
+
+
+
+.tree-wrap .ul a:link, 
+.tree-wrap .ul a:visited,
+.tree-wrap .ul a:hover,
+.tree-wrap .ul a.container-link:link, 
+.tree-wrap .ul a.container-link:visited,
+.tree-wrap .ul a.container-link:hover,
+.tree-wrap .ul a.container-link.active:link, 
+.tree-wrap .ul a.container-link.active:visited,
+.tree-wrap .ul a.container-link.active:hover { padding-left:15px; background-position:1px 2px }
+
+html>body .tree-wrap .ul a:link, 
+html>body .tree-wrap .ul a:visited,
+html>body .tree-wrap .ul a:hover,
+html>body .tree-wrap .ul a.container-link:link, 
+html>body .tree-wrap .ul a.container-link:visited,
+html>body .tree-wrap .ul a.container-link:hover,
+html>body .tree-wrap .ul a.container-link.active:link, 
+html>body .tree-wrap .ul a.container-link.active:visited,
+html>body .tree-wrap .ul a.container-link.active:hover { padding-left:15px; background-position:1px 0 }
+
+
+.tree-wrap .ul .ul a:link,
+.tree-wrap .ul .ul a:visited,
+.tree-wrap .ul .ul a:hover,
+.tree-wrap .ul .ul a.container-link:link,
+.tree-wrap .ul .ul a.container-link:visited,
+.tree-wrap .ul .ul a.container-link:hover,
+.tree-wrap .ul .ul a.container-link.active:link,
+.tree-wrap .ul .ul a.container-link.active:visited,
+.tree-wrap .ul .ul a.container-link.active:hover { padding-left:30px; background-position:16px 2px }
+
+html>body .tree-wrap .ul .ul a:link,
+html>body .tree-wrap .ul .ul a:visited,
+html>body .tree-wrap .ul .ul a:hover,
+html>body .tree-wrap .ul .ul a.container-link:link,
+html>body .tree-wrap .ul .ul a.container-link:visited,
+html>body .tree-wrap .ul .ul a.container-link:hover,
+html>body .tree-wrap .ul .ul a.container-link.active:link,
+html>body .tree-wrap .ul .ul a.container-link.active:visited,
+html>body .tree-wrap .ul .ul a.container-link.active:hover { padding-left:30px; background-position:16px 0 }
+
+
+
+.tree-wrap .ul .ul .ul a:link,
+.tree-wrap .ul .ul .ul a:visited,
+.tree-wrap .ul .ul .ul a:hover,
+.tree-wrap .ul .ul .ul a.container-link:link,
+.tree-wrap .ul .ul .ul a.container-link:visited,
+.tree-wrap .ul .ul .ul a.container-link:hover,
+.tree-wrap .ul .ul .ul a.container-link.active:link,
+.tree-wrap .ul .ul .ul a.container-link.active:visited,
+.tree-wrap .ul .ul .ul a.container-link.active:hover { padding-left:45px; background-position:31px 2px }
+
+html>body .tree-wrap .ul .ul .ul a:link,
+html>body .tree-wrap .ul .ul .ul a:visited,
+html>body .tree-wrap .ul .ul .ul a:hover,
+html>body .tree-wrap .ul .ul .ul a.container-link:link,
+html>body .tree-wrap .ul .ul .ul a.container-link:visited,
+html>body .tree-wrap .ul .ul .ul a.container-link:hover,
+html>body .tree-wrap .ul .ul .ul a.container-link.active:link,
+html>body .tree-wrap .ul .ul .ul a.container-link.active:visited,
+html>body .tree-wrap .ul .ul .ul a.container-link.active:hover { padding-left:45px; background-position:31px 0 }
+
+
+
+
+.tree-wrap .ul .ul .ul .ul a:link,
+.tree-wrap .ul .ul .ul .ul a:visited,
+.tree-wrap .ul .ul .ul .ul a:hover,
+.tree-wrap .ul .ul .ul .ul a.container-link:link,
+.tree-wrap .ul .ul .ul .ul a.container-link:visited,
+.tree-wrap .ul .ul .ul .ul a.container-link:hover,
+.tree-wrap .ul .ul .ul .ul a.container-link.active:link,
+.tree-wrap .ul .ul .ul .ul a.container-link.active:visited,
+.tree-wrap .ul .ul .ul .ul a.container-link.active:hover { padding-left:60px; background-position:46px 2px }
+
+html>body .tree-wrap .ul .ul .ul .ul a:link,
+html>body .tree-wrap .ul .ul .ul .ul a:visited,
+html>body .tree-wrap .ul .ul .ul .ul a:hover,
+html>body .tree-wrap .ul .ul .ul .ul a.container-link:link,
+html>body .tree-wrap .ul .ul .ul .ul a.container-link:visited,
+html>body .tree-wrap .ul .ul .ul .ul a.container-link:hover,
+html>body .tree-wrap .ul .ul .ul .ul a.container-link.active:link,
+html>body .tree-wrap .ul .ul .ul .ul a.container-link.active:visited,
+html>body .tree-wrap .ul .ul .ul .ul a.container-link.active:hover { padding-left:60px; background-position:46px 0 }
+

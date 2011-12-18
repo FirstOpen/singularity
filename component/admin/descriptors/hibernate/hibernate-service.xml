@@ -1,0 +1,15 @@
+<server>
+	<mbean code="org.jboss.hibernate.jmx.Hibernate" name="jboss.har:service=Hibernate">
+			<!-- Make it deploy ONLY after DataSource had been started
+    		<depends>jboss.jca:service=DataSourceBinding,name=mysqlDBPool</depends>-->
+            <attribute name="SessionFactoryName">java:/hibernate/SessionFactory</attribute>
+    		<attribute name="DatasourceName">java:mysqlDBPool</attribute>
+   	 	    <attribute name="Dialect">org.hibernate.dialect.MySQLInnoDBDialect</attribute>
+            <attribute name="MaxFetchDepth">3</attribute>
+            <attribute name="CacheProviderClass">org.hibernate.cache.EhCacheProvider</attribute>
+            <attribute name="QueryCacheEnabled">true</attribute>
+            <attribute name="ShowSqlEnabled">false</attribute>
+            
+            
+    </mbean>
+</server>

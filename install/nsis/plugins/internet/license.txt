@@ -1,0 +1,8 @@
+Public, meaning that you have the freedom to do what ever you want to do with it, 
+change, re-write, update, improve, etc. Just remember who is or are the original authors.
+
+Author: Joel ?
+
+Source : http://nsis.sourceforge.net/Joel_plugin_src
+
+

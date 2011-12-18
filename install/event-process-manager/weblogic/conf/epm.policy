@@ -1,0 +1,4 @@
+grant {
+	permission java.security.AllPermission;
+      permission org.jboss.security.SecurityAssociation "*", "read,write";
+};

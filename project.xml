@@ -1,0 +1,73 @@
+
+<project>
+	<pomVersion>3</pomVersion>
+	<id>singularity-parent</id>
+	<groupId>singularity</groupId>
+	<artifactId>singularity-parent</artifactId>
+	<name>Singularity Project</name>
+	<package>org.firstopen.*</package>
+	<currentVersion>1.0-MAIN</currentVersion>
+	<inceptionYear>2004</inceptionYear>
+	<organization>
+		<name>i-konect.com</name>
+		<url>http://www.i-konect.com</url>
+		<logo></logo>
+	</organization>
+	<url>http://www.i-konect.com/singularity/</url>
+	<issueTrackingUrl>http://singularity.firstopen.org/jira</issueTrackingUrl>
+	<siteAddress>http://www.i-konect.com</siteAddress>
+	<siteDirectory>singularity</siteDirectory>
+	<distributionDirectory>/singularity/dist/${pom.artifactId}/</distributionDirectory>
+	<repository>
+		<connection>scm:svn:http://www.firstopen.org/svn/singularity</connection>
+		<developerConnection>scm:svn:http://www.firstopen.org/svn/singularity</developerConnection>
+		<url>http://www.firstopen.org/svn/singularity</url>
+	</repository>
+	<developers>
+		<developer>
+			<id>TomRose</id>
+			<name>Tom Rose</name>
+			<email>tom.rose@i-konect.com</email>
+			<url>http://www.i-konect.com</url>
+			<roles>
+				<role>Lead Developer</role>
+				<role>Lead Architect</role>
+			</roles>
+			<timezone>-5</timezone>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor></contributor>
+	</contributors>
+	<dependencies>
+		<dependency>
+			<groupId>maven-plugins</groupId>
+			<artifactId>maven-findbugs-plugin</artifactId>
+			<version>1.0</version>
+			<type>plugin</type>
+			<url>http://maven-plugins.sourceforge.net/maven-findbugs-plugin/index.html</url>
+		</dependency>
+        <dependency>
+            <groupId>publicobject</groupId>
+            <artifactId>declawer</artifactId>
+            <version>1.0</version>
+            <url>http://publicobject.com</url>
+        </dependency>
+    	</dependencies>
+	<build>
+		<defaultGoal>singularity:dist</defaultGoal>
+		<sourceDirectory>src</sourceDirectory>
+		<unitTestSourceDirectory>test</unitTestSourceDirectory>
+		<unitTest>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</unitTest>
+	</build>
+	<reports>
+		<report>maven-faq-plugin</report>
+		<report>maven-license-plugin</report>
+		<report>maven-multichanges-plugin</report>
+		<report>maven-dashboard-plugin</report>
+	</reports>
+</project>

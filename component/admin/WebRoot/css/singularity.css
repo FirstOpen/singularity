@@ -1,0 +1,835 @@
+/*
+   Copyright (C) 2005 i-Konect LLC <tom.rose@i-konect.com>
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+*/
+body {
+    margin: 0px 0px 0px 0px;
+    padding: 0;
+    height: 100%;
+}
+
+#content-panel {
+    position: absolute;
+    margin-left: 170px;
+    padding: 15px;
+    _margin-left: 0px;
+}
+
+#navigation-bar {
+    
+}
+
+#info-panel {
+    background: white;
+    margin-left: 0px;
+    padding: 0px;
+    height: 100%;
+    _margin-top: 50px;
+    _margin-left: 0px;
+}
+
+.info-bar-row-odd {
+    background-color: lightgrey;
+}
+
+.info-bar-row-even {
+    background-color: grey;
+}
+
+.info-bar {
+    background-color: lightgrey;
+    margin-left: 0px;
+    padding: 0px;
+    margin-top: 5px;
+}
+
+.control-menubar-custom {
+    background-color: #9999ff;
+}
+
+#menu-bar {
+    position: absolute;
+}
+
+#header-bar {
+    margin-left: 180px;
+    background: #406abf;
+    padding: 0px;
+    text-decoration: none;
+}
+
+#header-bar a:link {
+    color: yellow;
+    text-decoration: none;
+}
+
+#header-bar a:visited {
+    color: yellow;
+    text-decoration: none;
+}
+
+#header-bar a:hover {
+    color: lightgreen;
+    text-decoration: none;
+}
+
+.toolbar-header {
+    color: yellow;
+    font-size: 9pt;
+    background: #406abf; /*#6e89dd;*/
+    text-decoration: none;
+    font-family: arial, helvetica, sans-serif;
+}
+
+.toolbar-header a:link {
+    color: yellow;
+    text-decoration: none;
+}
+
+.toolbar-header a:visited {
+    color: yellow;
+    text-decoration: none;
+}
+
+.toolbar-header a:hover {
+    color: lightgreen;
+    text-decoration: none;
+}
+
+.toolbar-text {
+    color: yellow;
+}
+
+.toolbar-selected-command {
+    font-size: 9pt;
+}
+
+.toolbar-icon {
+    margin-left: 0px;
+    margin-right: 10px;
+    border: 0px;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+.toolbar-icon-label {
+    padding-left: 5px;
+}
+
+.toolbar-user {
+    color: white;
+}
+
+.table-background {
+    background-color: blue;
+    border: 2px outset #71a5a5;
+    border-collapse: collapse;
+    font-family: arial, sans-serif;
+    font-size: 10pt;
+    text-align: left;
+    width: 100%;
+}
+
+.project-background {
+    background-color: rgb(233, 249, 244);
+    border: 2px outset #71a5a5;
+    border-collapse: collapse;
+    font-family: arial, sans-serif;
+    font-size: 10pt;
+    text-align: left;
+    width: 100%;
+}
+
+.table-header {
+    font-weight: bold;
+}
+
+.table-header a:link {
+    color: black;
+}
+
+.table-header a:hover {
+    color: blue;
+}
+
+.table-odd-row {
+    font-size: 10pt;
+    background-color: blue;
+    font-color: white;
+}
+
+.table-odd-row font {
+    color: white;
+}
+
+.table-even-row {
+    font-size: 10pt;
+    background-color: blue;
+}
+
+.table-odd-column {
+    font-size: 10pt;
+    background-color: rgb(233, 249, 244);
+}
+
+.table-even-column {
+    font-size: 10pt;
+    background-color: rgb(232, 255, 225);
+}
+
+.table-simple-row {
+    font-size: 10pt;
+}
+
+.sm-table-background {
+    border: 2px outset #71a5a5;
+    border-collapse: collapse;
+    font-family: arial, sans-serif;
+    font-size: 8pt;
+    text-align: left;
+    width: 99%;
+    _width: 98%;
+    background-color: #ffffff;
+    height: 60px;
+    background-image: url(/admin/images/header-bg.gif);
+}
+
+.sm-header {
+    font-weight: normal;
+}
+
+.sm-table-title {
+    font-size: 12pt;
+    color: black;
+    width: 99%;
+    _width: 99%;
+    text-align: left;
+}
+
+.sm-table-footer {
+    text-align: center;
+    background-color: ece9d8;
+}
+
+.sm-table-toolbar-icon {
+    margin-left: 0px;
+    margin-right: 10px;
+    border: 0px;
+    vertical-align: middle;
+}
+
+.sm-table-header {
+    font-size: 10pt;
+    color: white;
+    _font-size: 8pt;
+    font-weight: normal;
+}
+
+.sm-table-value {
+    font-size: 10pt;
+    _font-size: 8pt;
+    text-decoration: none;
+    border: 0px;
+}
+
+.sm-table-value.a:link {
+    text-decoration: none;
+    color: blue;
+}
+
+A.sm-table-value:visted {
+    text-decoration: none;
+    color: blue;
+}
+
+A.sm-table-value:active {
+    text-decoration: none;
+    color: blue;
+}
+
+A.sm-table-value:hover {
+    text-decoration: none;
+    color: red;
+}
+
+.sm-table-odd-row {
+    font-size: 10pt;
+    background-color: #d3cba5;
+    font-color: white;
+}
+
+.sm-table-odd-row font {
+    color: white;
+}
+
+.sm-table-even-row {
+    font-size: 8pt;
+    background-color: #ece9d8;
+    text-decoration: none;
+}
+
+.sm-table-odd-column {
+    font-size: 10pt;
+    color: white;
+    background-color: #708090;
+    _ font-size: 8pt;
+}
+
+.sm-table-even-column {
+    font-size: 10pt;
+    background-color: #9fb6cd;
+    _font-size: 8pt;
+}
+
+.sm-table-simple-row {
+    font-size: 10pt;
+}
+
+/*
+.standard {
+    font-family: verdana, geneva, arial, helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+}
+
+.standard_bold {
+    font-family: verdana, geneva, arial, helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.scrollerTable {
+    font-family: verdana, geneva, arial, helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    padding: 2;
+    border-style: solid;
+    border-width: 1px;
+    width: 400px;
+}
+
+.scroller {
+    padding-left: 20px;
+}
+
+.paginator {
+    font-family: verdana, geneva, arial, helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.standardTable {
+    font-family: verdana, geneva, arial, helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    padding: 2;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.standardTable_Header {
+    color: #000000;
+    background-color: #ffdd00;
+    padding: 3;
+    text-align: center;
+    border: none;
+}
+
+.standardTable_SortHeader {
+    background-color: #ffdd00;
+    color: #000000;
+    padding: 3;
+    text-align: center;
+    border: none;
+    font-weight: bold;
+}
+
+.standardTable_Footer {
+    background-color: #ffffe0;
+}
+
+.standardTable_Row1 {
+    background-color: #ffffe0;
+}
+
+.standardTable_Row2 {
+    background-color: #ffffe0;
+}
+
+.standardTable_Column {
+    
+}
+
+.standardTable_ColumnCentered {
+    text-align: center
+}
+
+a {
+    color: #333366;
+    text-decoration: underline;
+    font-size: 12px;
+}
+
+a:hover {
+    color: #333366;
+    text-decoration: underline;
+}
+
+.error {
+    font-family: verdana, geneva, arial, helvetica, sans-serif;
+    font-size: 10px;
+    color: #ff0000;
+}
+
+.sortLink {
+    color: #333366;
+    text-decoration: none;
+}
+
+.pageLayout {
+    width: 760px;
+    height: 100%;
+}
+
+.pageHeader {
+    background-color: #6392c6;
+    text-align: center;
+    vertical-align: middle;
+    height: 1px;
+    overflow: visible;
+    color: #ffffff;
+    padding: 0px;
+    margin: 0px;
+}
+
+.pageHeader1 {
+    
+}
+
+.pageHeader2 {
+    width: 100%;
+}
+
+.pageHeader2col1 {
+    background-color: #ffffff;
+}
+
+.pageNavigation {
+    text-align: left;
+    vertical-align: top;
+    width: 200px;
+    background-color: #e7eff7;
+    border: 1px solid #6392c6;
+    padding: 10px;
+}
+
+.pageBody {
+    text-align: left;
+    vertical-align: top;
+    width: 560px;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.pageFooter {
+    text-align: right;
+    font-size: xx-small;
+    height: 1px;
+    overflow: visible;
+    background-color: #6392c6;
+    color: #ffffff;
+}
+
+.navigation {
+    font-family: verdana, geneva, arial, helvetica, sans-serif;
+    font-size: 12px;
+    width: 100%;
+}
+
+.navitem {
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+a.navitem:hover,active {
+    white-space: nowrap;
+    text-decoration: none;
+    color: #6392c6;
+}
+
+.navitem_open {
+    white-space: nowrap;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.navitem_open:hover,active {
+    white-space: nowrap;
+    text-decoration: none;
+    font-weight: bold;
+    color: #6392c6;
+}
+
+.navitem_active {
+    white-space: nowrap;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #6392c6;
+    width: 100%;
+    color: #ffffff;
+}
+
+a.navitem_active:hover,active {
+    white-space: nowrap;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #6392c6;
+    width: 100%;
+    color: #ffffff;
+}
+
+.navseparator {
+    line-height: 12px;
+    border-bottom: 1px solid #a2b7c5;
+}
+
+.fileUploadInput {
+    font-family: verdana, geneva, arial, helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    width: 250px;
+}
+
+.emptyHeader {
+    background-color: #ffffff;
+    border-top: 0px none;
+    border-right: 0px none;
+    border-bottom: 0px none;
+    border-left: 0px none;
+}
+
+div.titlebar {
+    background: #c7d0d9;
+    color: black;
+    border: 1px solid #8cacbb;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin: 1px 1px;
+    clear: both;
+}
+
+/*
+   ------------------------------------------------------------
+   Calendar component
+   ------------------------------------------------------------
+*/
+.yearMonthHeader {
+    background-color: #dddddd;
+    color: #000000;
+    text-align: center;
+    border: none;
+    font-weight: bold;
+}
+
+.weekHeader {
+    background-color: #e7e7e7;
+    color: #000000;
+    text-align: center;
+    border: none;
+}
+
+.currentDayCell {
+    background-color: #dddddd;
+    color: #000000;
+    border: none;
+}
+
+/*
+   ------------------------------------------------------------
+   End Calendar component
+   ------------------------------------------------------------
+*/ /*
+   ------------------------------------------------------------
+   Popup component
+   ------------------------------------------------------------
+*/
+.popup {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    border: 1px solid #cccccc;
+    font-size: smaller;
+    padding: 5px;
+}
+
+.popup table {
+    font-size: smaller;
+}
+
+/*
+   ------------------------------------------------------------
+   End popup component
+   ------------------------------------------------------------
+*/
+.countryFormTable {
+    font-family: verdana, geneva, arial, helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    padding: 2;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.countryFormHeader {
+    font-family: verdana, geneva, arial, helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    padding: 2;
+    border-style: none;
+    background-color: #ffdd00;
+    text-align: center;
+    font-weight: normal;
+}
+
+.countryFormFooter {
+    font-family: verdana, geneva, arial, helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    padding: 2;
+    border-style: none;
+    background-color: #ffdd00;
+    text-align: center;
+    font-weight: normal;
+}
+
+.countryFormLabels {
+    font-family: verdana, geneva, arial, helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    padding: 2;
+    border-style: none;
+    text-align: right;
+    font-weight: bold;
+}
+
+.countryFormInputs {
+    font-family: verdana, geneva, arial, helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    padding: 2;
+    border-style: none;
+}
+
+/*
+   ------------------------------------------------------------
+   Tree component
+   ------------------------------------------------------------
+*/
+.nodeFolder {
+    font-size: 10px;
+    font-family: verdana, geneva, sans-serif;
+    text-decoration: none
+}
+
+.document {
+    color: blue;
+    font-size: 10px;
+    font-family: verdana, geneva, sans-serif;
+    text-decoration: none
+}
+
+.documentSelected {
+    color: blue;
+    font-size: 10px;
+    font-family: verdana, geneva, sans-serif;
+    text-decoration: none;
+    font-weight: bold
+}
+
+.childCount {
+    color: blue;
+    font-size: 10px;
+    font-family: verdana, geneva, sans-serif;
+    text-decoration: none
+}
+
+/*
+   ------------------------------------------------------------
+   Panelnavigation
+   ------------------------------------------------------------
+*/
+#subnavigation {
+    margin-left: 0px;
+    margin-right: 20px;
+    padding: 0px 0px 20px 0px;
+    border: 1px solid #546359;
+    background-color: #eaf4f4;
+}
+
+#subnavigation_outer {
+    float: left;
+    width: 220px;
+    padding: 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+#subnavigation_outer h1 {
+    font-size: 1.5em;
+    margin: 0px;
+    padding: 0px 0px 15px 0px;
+}
+
+/**************************************************
+ * css layers and classes for list navigation list
+ **************************************************/
+#subnavigation ul li  a {
+    display: block;
+    background-color: #d1e4e4;
+    color: #294747;
+    text-decoration: none;
+    border-bottom: 1px solid #87a8a8;
+    padding: 2px 20px;
+    margin: 0px;
+}
+
+#subnavigation ul li a:visited {
+    color: #294747;
+}
+
+#subnavigation ul li a:hover {
+    color: #ffffff;
+    background-color: #87a8a8;
+}
+
+#subnavigation ul li a:active {
+    color: #294747;
+}
+
+#subnavigation ul li a.selected {
+    font-weight: bold;
+    color: #294747;
+    background-color: #ffffff;
+}
+
+#subnavigation ul ul li a {
+    padding: 2px 20px 2px 25px;
+    margin: 0px;
+    background-color: #ffffff;
+}
+
+#subnavigation ul ul li ul li a {
+    padding: 2px 20px 2px 30px;
+    margin: 0px;
+}
+
+#subnavigation ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+#subnavigation li {
+    margin: 0px;
+    padding: 0px;
+    display: inline;
+}
+
+#subnavigation ul.mypage li a {
+    padding: 2px 20px 2px 20px;
+    background-color: #d1e4e4;
+    margin: 0px;
+    background-color: #eaf4f4;
+}
+
+table,th,td {
+    font-size: small;
+    border: none;
+}
+
+.treeHeader {
+    background-color: #bbb;
+    border: 0.75px solid #fff;
+    padding: 2px 3px;
+    text-align: left;
+}
+
+.treeFooter {
+    padding: 5px;
+    margin: .67em 2px;
+    margin-top: 0;
+    background-color: #ddd;
+    background-image: url(../images/sw_med_rond.gif);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+
+input,.treeFooter {
+    font-size: xx-small;
+    font-size: x-small;
+}
+
+.a td {
+    background: #ddd;
+    border-bottom: 1px solid #fff;
+}
+
+.b td {
+    background: #efefef;
+    border-bottom: 1px solid #fff;
+}
+
+.col1 {
+    border-right: 1px solid #fff;
+    padding: 2px 15px 2px 5px;
+}
+
+.col2 {
+    border-left: 1px solid #fff;
+    padding: 2px 15px 2px 5px;
+}
+
+.tree {
+    lineheight: 18px;
+    font-family: arial, sans-serif;
+}
+
+.treenode {
+    padding: 2px 15px 2px 5px;
+}
+
+.treenode a {
+    text-decoration: none;
+}
+
+.treenodeSelected {
+    padding: 2px 15px 2px 5px;
+}
+
+.treenodeSelected a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+table .selectOneRadio {
+    font-weight: bold;
+}
+
+.standardList {
+    font-family: verdana, geneva, arial, helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+}
+*/

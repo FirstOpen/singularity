@@ -1,0 +1,41 @@
+
+<project>
+	<extend>${basedir}/../../project.xml</extend>
+    <!--pomVersion is in parent -->
+    <!-- groupId is in parent -->
+	<id>singularity-schema</id>
+	<name>Singularity XMLBeans Schema</name>
+	<description>Singularity XMLBeans Schema</description>
+	<shortDescription>Singularity XMLBeans Schema</shortDescription>
+	<package>org.firstopen.epc.*</package>
+	<dependencies>
+		<dependency>
+			<groupId>xmlbeans</groupId>
+			<artifactId>xbean</artifactId>
+			<version>2.0.0</version>
+			<type>jar</type>
+			<url>http://xmlbeans.apache.org</url>
+		</dependency>
+		<dependency>
+			<groupId>xmlbeans</groupId>
+			<artifactId>jsr173_api</artifactId>
+			<version>2.0.0</version>
+			<type>jar</type>
+			<url>http://xmlbeans.apache.org</url>
+		</dependency>
+	</dependencies>
+	<build>
+		<defaultGoal>singularity-dist</defaultGoal>
+		<sourceDirectory>src</sourceDirectory>
+		<unitTestSourceDirectory>test</unitTestSourceDirectory>
+		<unitTest>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</unitTest>
+	</build>
+	<reports>
+		<report>maven-faq-plugin</report>
+		<report>maven-license-plugin</report>
+	</reports>
+</project>

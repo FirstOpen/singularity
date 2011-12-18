@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<classpath>
+  <classpathentry excluding="" kind="src" path="src">
+  </classpathentry>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/jboss/jars/jboss-common-4.0.3SP1.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/jboss/jars/jboss-j2ee-4.0.3SP1.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/jboss/jars/jboss-jsr77-client-4.0.3SP1.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/commons-logging/jars/commons-logging-1.0.4.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/log4j/jars/log4j-1.2.9.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/commons-httpclient/jars/commons-httpclient-2.0.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/hibernate/jars/hibernate-3.1.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/xerces/jars/xercesImpl-2.7.1.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/publicobject/jars/declawer-1.0.jar">
+  </classpathentry>
+  <classpathentry kind="output" path="target/classes">
+  </classpathentry>
+</classpath>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+ <properties>
+    <title>Welcome to Singularity</title>
+    <author email="tom.rose@i-konect.com">Tom Rose</author>
+  </properties>
+
+  <body>
+    <section name="Welcome to Singularity">
+      <p>Singularity is an open source project dedicated to developing and promoting RFID
+         middleware technology for use in supply chain management and the
+         EPCglobal Network™. Singularity has two major components, the
+         Middleware and EPC Information Service (EPC-IS).
+     </p>
+     <p>Singularity envisions an open source EPC-IS that is compliant with the EPCglobal™
+         specification, as well as enables successful integration of EPC related
+         information into the enterprise. The technology platform chosen for
+         singularity is Java™ as it can be introduced into almost any corporate
+         infrastructure.
+     </p>
+     <p>The reason for Singularity is to accelerate the evolution and adoption of RFID solutions. RFID
+         Middleware and EPC-IS provides a platform that reduces entrance
+         barriers, as well as provides a base to allow commercial companies to
+         accelerate their product offerings. The open source approach, utilizing
+         the <a href="http://www.apache.org/licenses/LICENSE-2.0.html" title="Apache 2.0 license">Apache 2.0 license</a>,
+         enables end users, as well as commercial vendors, to effectively
+         introduce RFID enabled supply chain management solutions into the
+         enterprise.
+     </p>
+  
+     
+      <subsection name="News">
+       <p style="font-size: larger; font-weight: bold">
+          20 October 2005 - Singularity 1.0-M2 Release
+        </p>
+        <p>
+         Singularity Milestone Release
+        </p>
+ 
+       <p style="font-size: larger; font-weight: bold">
+          20 October 2005 - Singularity 1.0-M1 Release
+        </p>
+        <p>
+         Singularity Milestone Release
+        </p>
+
+      </subsection>
+
+      
+      <subsection name="Help and Feedback">
+        <p>
+          If you have any questions, suggestions or comments about Singularity or
+          this website, please feel free to post them to the
+          <a href="mail-lists.html">Singularity users mailing list</a>.
+        </p>
+      </subsection>
+
+      <subsection name="Release Information">
+        <p>
+          The current stable Singularity release is version 0.0 and can be obtained from the
+          <a href="start/download.html">download page</a>.
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          
+        </p>
+      </subsection>
+
+    </section>
+    <section name="Requirements">
+      <p>Be careful, the following plugins must be installed to build the Singularity project :</p>
+      <ul>
+        <li>maven-findbugs-plugin 0.9.2 (at least)</li>
+        <li>maven-checkstyle-plugin 2.4.1 (at least)</li>
+      </ul>
+    </section>
+  </body>
+</document>

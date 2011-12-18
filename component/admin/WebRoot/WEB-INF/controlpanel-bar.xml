@@ -1,0 +1,99 @@
+<controlPanelBar name="ControlPanelBar">
+    <panel id="device-management" title="Device Mgmt" expand="true" resourceId="DeviceManagementId">
+         <item id="device-profile" image="../../images/users.gif"
+            title="Device Profile" frame="_self"
+            resourceId="DeviceProfileId">
+            <action name="/admin/jsp/body/deviceProfile.jsf">
+                <param name="bogus1" value="bogus2" />
+            </action>
+        </item>
+          <item id="logical-reader" image="../../images/users.gif"
+            title="Logical Reader" frame="_self"
+            resourceId="LogicalReaderId">
+            <action name="/admin/jsp/body/logicalDevice.jsf">
+                <param name="bogus1" value="bogus2" />
+            </action>
+        </item>
+        
+    </panel>
+    <panel id="ale" title="Ale Service" expand="true"
+        resourceId="AleServiceId">
+        <item id="ecspec-define" image="../../images/users.gif"
+            title="Define ECSpec" frame="_self" resourceId="ECSpecDId">
+            <action name="/admin/jsp/body/ecSpec.jsf">
+                <param name="bogus1" value="bogus2" />
+            </action>
+        </item>
+        <item id="ecspec-subscription" image="../../images/users.gif"
+            title="Subscribe ECSpec" frame="_self" resourceId="ECSpecSId">
+            <action name="/admin/jsp/body/ecSpecSubscribe.jsf">
+                <param name="bogus1" value="bogus2" />
+            </action>
+        </item>
+ 
+     </panel>
+    <panel id="application" title="Applications" expand="true"
+        resourceId="ApplicationId">
+         <item id="event-monitor" image="../../images/users.gif"
+            title="Event Monitor" frame="_self" resourceId="SealId">
+            <action name="/admin/jsp/body/eventMonitorWrap.jsf">
+                <param name="bogus1" value="bogus2" />
+            </action>
+        </item>
+        <item id="Event Archive" image="../../images/users.gif" title="EventArchive"
+            frame="_self" resourceId="EventArchiveID">
+            <action name="/admin/jsp/body/eventRecordArchive.jsf">
+                <param name="bogus3" value="bogus4" />
+                <param name="bogus5" value="bogus6" />
+            </action>
+        </item>
+        <item id="carter-note" image="../../images/users.gif"
+            title="CarterNote" frame="_self"
+            resourceId="CarterNoteId">
+            <action name="/admin/jsp/body/carterNote.jsf">
+                <param name="bogus1" value="bogus2" />
+            </action>
+        </item>
+       <item id="tag-mgmt" image="../../images/users.gif" title="Tag"
+            frame="_self" resourceId="TagId">
+            <action name="/admin/jsp/body/tag.jsf">
+                <param name="bogus3" value="bogus4" />
+                <param name="bogus5" value="bogus6" />
+            </action>
+        </item>        
+    </panel>
+    <panel id="administrations" title="Administrations" expand="true"
+        resourceId="AdministrationsId">
+        <item id="databases" image="../../images/databases.gif"
+            title="Databases" frame="_self" resourceId="DatabasesId">
+            <action name="/admin/jsp/body/notavailable.jsf" />
+        </item>
+        <item id="servers" image="../../images/servers.gif"
+            title="Servers" frame="_self" resourceId="ServersId">
+            <action name="/admin/jsp/body/notavailable.jsf" />
+        </item>
+        <item id="security" image="../../images/security.gif"
+            title="Security" frame="_self" resourceId="SecurityId">
+            <action name="security.jsp" />
+        </item>
+        <item id="services" image="../../images/services.gif"
+            title="Services" frame="_self" resourceId="ServicesId">
+            <action name="/admin/jsp/body/notavailable.jsf">
+                <param name="bogus3" value="bogus4" />
+                <param name="bogus5" value="bogus6" />
+            </action>
+        </item>
+    </panel>
+    <panel id="reports" title="Reports" expand="true"
+        resourceId="ReportsId">
+        <item id="statistics" image="../../images/statistics.gif"
+            title="Statistics" frame="_self"
+            resourceId="StatisticsId">
+            <action name="/admin/jsp/body/notavailable.jsf" />
+        </item>
+        <item id="charts" image="../../images/charts.gif" title="Chart"
+            frame="_self" resourceId="ChartsId">
+            <action name="/admin/jsp/body/notavailable.jsf" />
+        </item>
+    </panel>
+</controlPanelBar>

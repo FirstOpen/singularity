@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<classpath>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/xmlbeans/jars/xbean-2.0.0.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/xmlbeans/jars/jsr173_api-2.0.0.jar">
+  </classpathentry>
+  <classpathentry kind="var" path="MAVEN_REPO/publicobject/jars/declawer-1.0.jar">
+  </classpathentry>
+  <classpathentry kind="output" path="target/classes">
+  </classpathentry>
+</classpath>
