@@ -1,6 +1,6 @@
 /*
 
- * Copyright 2005 i-Konect LLC
+ * Copyright (c) 2005 J. Thomas Rose. All rights reserved.
 
  *
 

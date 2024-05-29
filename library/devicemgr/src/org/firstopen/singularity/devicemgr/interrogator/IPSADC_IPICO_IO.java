@@ -1,5 +1,5 @@
 /*
- * Copyright 2005 i-Konect LLC
+ * Copyright (c) 2005 J. Thomas Rose. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -401,17 +401,17 @@ public class IPSADC_IPICO_IO implements SerialPortEventListener, Interrogator,
 	 * similar to the UDP protocol. Table 1 depicts the content of these
 	 * data-grams for the hexadecimal ASCII format. This format converts the
 	 * binary data to ASCII but with a hexadecimal base (e.g. 0b00101111 is
-	 * converted to “2f”). All ASCII characters are lower case. In addition, the
+	 * converted to ï¿½2fï¿½). All ASCII characters are lower case. In addition, the
 	 * ID CRC bytes are stripped off. A simple 8-bit LRC is appended to the
 	 * packet and is a modulo 28 addition of all the data in the packet but not
 	 * the Frame header bytes.
 	 * 
-	 * Example: ASCII spooled ID, “aa400000000123450a2a01123018455927a7<CR><LF>”
+	 * Example: ASCII spooled ID, ï¿½aa400000000123450a2a01123018455927a7<CR><LF>ï¿½
 	 * (38 bytes) Reader ID 0x40 (64d), tag ID 0x000000012345, I counter 0x0a
 	 * (10d), Q counter 0x2a (42d), date (20)01-12- 30, 18:45:59.39, checksum
 	 * 0xa7. (Note the millennium and century value is discarded in date stamp)
-	 * ASCII LRC checksum calculation: ‘4’+‘0’ + ….. ‘2’ + ‘7’ Calculations are
-	 * done in hexadecimal on ASCII data, (i.e ASCII character ‘a’ is 0x61) 0x34 +
+	 * ASCII LRC checksum calculation: ï¿½4ï¿½+ï¿½0ï¿½ + ï¿½.. ï¿½2ï¿½ + ï¿½7ï¿½ Calculations are
+	 * done in hexadecimal on ASCII data, (i.e ASCII character ï¿½aï¿½ is 0x61) 0x34 +
 	 * 0x30 + 0x30 + 0x30 + 0x30 + 0x30 + 0x30 + 0x30 + 0x30 + 0x31 + 0x32 +
 	 * 0x33 + 0x34 + 0x35 + 0x30 + 0x61 + 0x32 + 0x61 + 0x30 + 0x31 + 0x31 +
 	 * 0x32 + 0x33 + 0x30 + 0x31 + 0x38 + 0x34 + 0x35 + 0x35 + 0x39 + 0x32 +

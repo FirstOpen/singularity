@@ -1,6 +1,6 @@
 <%--
 
-  Copyright 2005 i-Konect LLC
+  Copyright (c) 2005 J. Thomas Rose. All rights reserved.
  
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@
           This screen will be displayed into Two Sortable tables dynamic data list. One from
           packagemove, then other from tags(that they own)
           The package move one will be simular to package move, but will have less fields and show last read date time and if tampered. clicking the more button on a record will open the alldetails page for that particular package
-           
+          ï¿½
           The tags list will be a sortable table with dynamic datalist. click on the more button will open the tagDetail tile and the tagTypeDetailTile in the tag.jsp
   --%>
 
@@ -159,6 +159,6 @@
 <%--          This screen will be displayed into Two Sortable tables dynamic data list. One from
           packagemove, then other from tags(that they own)
           The package move one will be simular to package move, but will have less fields and show last read date time and if tampered. clicking the more button on a record will open the alldetails page for that particular package
-           
+          ï¿½
           The tags list will be a sortable table with dynamic datalist. click on the more button will open the tagDetail tile and the tagTypeDetailTile in the tag.jsp
   --%>
